@@ -1,12 +1,26 @@
 {
+  "_index-94c96da9.js": {
+    "file": "assets/index-94c96da9.js"
+  },
   "resources/css/app.css": {
     "file": "assets/app-c5c5d29b.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-4502e45e.js",
+    "file": "assets/app-12afaadc.js",
+    "imports": [
+      "_index-94c96da9.js"
+    ],
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/sliderProducts.js": {
+    "file": "assets/sliderProducts-ffde7b64.js",
+    "imports": [
+      "_index-94c96da9.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/sliderProducts.js"
   }
 }

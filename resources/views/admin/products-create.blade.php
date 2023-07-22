@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <h2 class="my-4 text-2xl font-bold text-center">Register product</h2>
+    Register product
 @endsection
 
 @push('styles')

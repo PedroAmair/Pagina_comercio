@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <h2 class="mt-4 text-2xl font-bold text-center">Products listing</h2>
+   Products listing
 @endsection
 
 @section('content')

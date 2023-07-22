@@ -19,9 +19,13 @@
             </div>
         </header>
 
-        @yield('title')
+        <main>
+            <h2 class="text-center font-bold text-3xl mt-4">
+                @yield('title')
+            </h2>
 
-        @yield('content')
-        
+            @yield('content')
+        </main>
+
     </body>
 </html>

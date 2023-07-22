@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-
-@endsection
-
 @section('content')
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="10000">

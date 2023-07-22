@@ -61,9 +61,13 @@
             </div>
         </header>
 
-        @yield('title')
+        <main>
+            <h2 class="text-center font-black text-3xl">
+                @yield('title')
+            </h2>
 
-        @yield('content')
+            @yield('content')
+        </main>
         
         <footer class="p-5 bg-black flex flex-col items-center mt-5">
             <div class="flex gap-5">

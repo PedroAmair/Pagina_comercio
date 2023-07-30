@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex flex-col justify-center items-center mt-10">
         <div>
-            <img class="w-80" src="{{ asset('img/logo/logo4.png') }}" alt="register image">
+            <img class="w-80" src="{{ asset('img/logo/Logo4.png') }}" alt="register image">
         </div>
 
         <div class="font-bold text-3xl mb-4">

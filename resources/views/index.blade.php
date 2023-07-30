@@ -64,7 +64,7 @@
                 @foreach ($processors as $processor)
                     <div class="min-w-[16%]">
                         <a href="#">
-                            <img loading="lazy" src="{{ asset('uploads').'/'.$processor->image }}" alt="{{ $processor->name }}">
+                            <img src="{{ asset('uploads').'/'.$processor->image }}" alt="{{ $processor->name }}">
                             <p class="text-center font-bold">{{ ucfirst(strtolower($processor->brand)).' '.$processor->name }}</p>
                             <p class="text-center text-green-700 font-bold">{{ $processor->price}}$</p>
                         </a>
@@ -89,42 +89,42 @@
         <div class="grid md:grid-cols-3 gap-3">
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
-                    <img loading="lazy" src="{{ asset('img/components/motherboard.webp') }}" alt="motherboard image">
+                    <img src="{{ asset('img/components/motherboard.webp') }}" alt="motherboard image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Motherboards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
-                    <img loading="lazy" src="{{ asset('img/components/processor.webp') }}" alt="processor image">
+                    <img src="{{ asset('img/components/processor.webp') }}" alt="processor image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPUs</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
-                    <img loading="lazy" src="{{ asset('img/components/graphicCard.webp') }}" alt="graphic card image">
+                    <img src="{{ asset('img/components/graphicCard.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Graphics Cards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
-                    <img loading="lazy" src="{{ asset('img/components/ram.webp') }}" alt="graphic card image">
+                    <img src="{{ asset('img/components/ram.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">RAM sticks</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
-                    <img loading="lazy" src="{{ asset('img/components/ssd.webp') }}" alt="graphic card image">
+                    <img src="{{ asset('img/components/ssd.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Solid State Drives</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
-                    <img loading="lazy" src="{{ asset('img/components/case.webp') }}" alt="graphic card image">
+                    <img src="{{ asset('img/components/case.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
                 </a>
             </div>

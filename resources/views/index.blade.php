@@ -247,7 +247,7 @@
 
             <div class="transition hover:scale-125">
                 <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/asus.png')}}" alt="asus logo">
+                    <img class="rounded-t-lg w-32 h-32 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/asus.png')}}" alt="asus logo">
                 </a>
             </div>
 

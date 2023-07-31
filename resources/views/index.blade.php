@@ -216,7 +216,7 @@
     <div class="mt-4 p-5">
         <h2 class="text-black text-3xl mb-5">Search for products of your favorite brand</h2>
 
-        <div class="mt-5 grid grid-cols-2 md:grid-cols-8 gap-5">
+        <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-8 gap-5">
             <div class="transition hover:scale-125">
                 <a href="#">
                     <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/amd.png')}}" alt="amd logo">
@@ -243,7 +243,7 @@
 
             <div class="transition hover:scale-125">
                 <a href="#">
-                    <img class="rounded-t-lg w-32 h-32 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/asus.png')}}" alt="asus logo">
+                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/thermaltake.png')}}" alt="kingston logo">
                 </a>
             </div>
 

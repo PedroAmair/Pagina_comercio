@@ -51,7 +51,7 @@
     <div class="relative p-5 mt-4">
         <h2 class="text-black text-3xl mb-5">Choose your CPU</h2>
         <div>
-            <div class="absolute cursor-pointer object-cover md:p-3 left-1 top-32 md:top-22 translate-x-0 translate-y-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrow">
+            <div class="absolute cursor-pointer object-cover md:p-3 left-1 top-32 md:top-22 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrow">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -59,20 +59,10 @@
                     <path d="M5 12l6 -6" />
                 </svg>
             </div>
+
+            <x-processors-list :processors="$processors" />
     
-            <div class="flex gap-4 overflow-hidden scroll-smooth" id="slider">
-                @foreach ($processors as $processor)
-                    <div class="min-w-[16%]">
-                        <a href="#">
-                            <img src="{{ asset('uploads').'/'.$processor->image }}" alt="{{ $processor->name }}">
-                            <p class="text-center font-bold">{{ ucfirst(strtolower($processor->brand)).' '.$processor->name }}</p>
-                            <p class="text-center text-green-700 font-bold">{{ $processor->price}}$</p>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-    
-            <div class="absolute cursor-pointer object-cover md:p-3 right-0 top-32 md:top-22 translate-x-0 translate-y-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrow">
+            <div class="absolute cursor-pointer object-cover md:p-3 right-0 top-32 md:top-22 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrow">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -134,7 +124,7 @@
     <div class="relative p-5 mt-4">
         <h2 class="text-black text-3xl mb-5">Our best deals</h2>
         <div>
-            <div class="absolute cursor-pointer object-cover md:p-3 left-1 top-32 md:top-22 translate-x-0 translate-y-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrowOf">
+            <div class="absolute cursor-pointer object-cover md:p-3 left-1 top-32 md:top-22 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrowOf">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -143,19 +133,9 @@
                 </svg>
             </div>
     
-            <div class="flex gap-4 overflow-hidden scroll-smooth" id="sliderOf">
-                @foreach ($discounts as $discount)
-                    <div class="min-w-[16%]">
-                        <a href="#">
-                            <img loading="lazy" src="{{ asset('uploads').'/'.$discount->image }}" alt="{{ $discount->name }}">
-                            <p class="text-center font-bold">{{ ucfirst(strtolower($discount->brand)).' '.$discount->name }}</p>
-                            <p class="text-center text-green-700 font-bold">{{ $discount->price}}$</p>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+            <x-products-list :discounts="$discounts" />
     
-            <div class="absolute cursor-pointer object-cover md:p-3 right-0 top-32 md:top-22 translate-x-0 translate-y-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrowOf">
+            <div class="absolute cursor-pointer object-cover md:p-3 right-0 top-32 md:top-22 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrowOf">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />

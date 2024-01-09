@@ -8,7 +8,7 @@
         @vite('resources/css/app.css')
         @vite('resources/js/sliderProducts.js')
     </head>
-    <body class="antialiased">
+    <body class="antialiased max-w-[2600px]">
         <header class="p-5 bg-black">
             <div class="md:flex justify-between items-center">
                 <div class="md:w-3/12">

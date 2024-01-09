@@ -8,10 +8,10 @@
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="10000">
         <!-- Carousel wrapper -->
-        <div class="relative overflow-hidden h-36 md:h-[30rem] xl:h-[35rem] 2xl:h-[63rem]">
+        <div class="relative h-56 overflow-hidden md:h-96">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ asset('img/carrousel/ryzen.webp') }}" class="absolute  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="ryzen image">
+                <img src="{{ asset('img/carrousel/ryzen.webp') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="ryzen image">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -76,7 +76,7 @@
     <div class="mt-4 p-5">
         <h2 class="text-black text-3xl mb-5">What are you looking for?</h2>
 
-        <div class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6  gap-3">
+        <div class="grid md:grid-cols-3 gap-3">
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="#">
                     <img src="{{ asset('img/components/motherboard.webp') }}" alt="motherboard image">
@@ -200,7 +200,7 @@
     <div class="mt-4 p-5">
         <h2 class="text-black text-3xl mb-5">Search for products of your favorite brand</h2>
 
-        <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-5">
+        <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-8 gap-5">
             <div class="transition hover:scale-125">
                 <a href="#">
                     <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/amd.png')}}" alt="amd logo">
@@ -253,7 +253,7 @@
 
     <div class="mt-4 p-5">
         <h2 class="text-black text-3xl mb-5">Don't forget to check our news...</h2>
-        <div class="bg-blue-950 py-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center">
+        <div class="bg-blue-950 py-5 flex flex-col md:flex-row gap-2 justify-center items-center">
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                 <a href="#">
                     <img class="rounded-t-lg" src="{{ asset('img/news/rx7600.webp') }}" alt="rx 7600 image" />
@@ -296,23 +296,6 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700">
                             Nvidia has sent us an RTX 4060 Ti so we can test it and here's what we have to say about the company's new graphics card...</p>
-                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Read more
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-            </div>
-
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                <a href="#">
-                    <img class="rounded-t-lg" src="{{ asset('img/news/14900k.webp') }}" alt="rtx 4060ti image" />
-                </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Intel's king of gaming</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">
-                            The new Intel Core i9 14900K is the best piece of equipment to handle any game you throw at him...</p>
                         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                             Read more
                             <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>

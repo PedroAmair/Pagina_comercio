@@ -146,7 +146,7 @@
         </div>
     </div>
 
-    <div class="bg-sky-500 mt-4 flex flex-col md:flex-row justify-center">
+    <div class="bg-gradient-to-r from-sky-300 to-sky-500 mt-4 flex flex-col md:flex-row justify-center">
         <div class="flex flex-col justify-center">
             <div class="flex flex-col gap-2 items-start justify-center ml-5">
                 <h2 class="text-black text-4xl mb-2">We offer:</h2>
@@ -160,7 +160,7 @@
                             <path d="M14 12v-6.5a1.5 1.5 0 0 1 3 0v6.5" />
                           </svg>
                     </div>
-                    <p class="text-black text-base ml-2">Wide variety of products to satisfy all the needs of our buyers</p>
+                    <p class="text-black text-base ml-2">Wide variety of products to satisfy all the needs of our clients</p>
                 </div>
     
                 <div class="flex justify-center items-center">
@@ -253,7 +253,7 @@
 
     <div class="mt-4 p-5">
         <h2 class="text-black text-3xl mb-5">Don't forget to check our news...</h2>
-        <div class="bg-blue-950 py-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center">
+        <div class="bg-blue-950 py-5 px-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center">
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                 <a href="#">
                     <img class="rounded-t-lg" src="{{ asset('img/news/rx7600.webp') }}" alt="rx 7600 image" />
@@ -325,7 +325,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-        
+        </div>    
     </div>
 @endsection

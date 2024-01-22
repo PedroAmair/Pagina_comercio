@@ -14,7 +14,7 @@
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="username" id="username" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="username" id="username" class="mb-2 block uppercase text-gray-500 font-bold">
                         Username
                     </label>
                     <input
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" id="password" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="password" id="password" class="mb-2 block uppercase text-gray-500 font-bold">
                         Password
                     </label>
                     <input
@@ -44,6 +44,10 @@
                     @error('password')
                         <p class="text-red-500 my-2 text-sm">{{ $message }}</p>
                     @enderror
+                </div>
+
+                <div>
+                    <input type="checkbox" name="remember"><label for="remember" id="remember" class="text-gray-500 font-bold"> Remember me
                 </div>
 
                 @if (session('message'))

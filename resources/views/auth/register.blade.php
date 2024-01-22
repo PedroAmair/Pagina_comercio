@@ -14,7 +14,7 @@
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="name" id="name" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="name" id="name" class="mb-2 block uppercase text-gray-500 font-bold">
                         Full name
                     </label>
                     <input
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="username" id="username" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="username" id="username" class="mb-2 block uppercase text-gray-500 font-bold">
                         Username
                     </label>
                     <input
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" id="email" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="email" id="email" class="mb-2 block uppercase text-gray-500 font-bold">
                         Email
                     </label>
                     <input
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" id="password" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="password" id="password" class="mb-2 block uppercase text-gray-500 font-bold">
                         Password
                     </label>
                     <input
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password_confirmation" id="password" class="mb-2" block uppercase text-gray-500 font-bold>
+                    <label for="password_confirmation" id="password" class="mb-2 block uppercase text-gray-500 font-bold">
                         Repeat password
                     </label>
                     <input

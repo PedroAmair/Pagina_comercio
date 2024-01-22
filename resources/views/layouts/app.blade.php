@@ -44,16 +44,33 @@
                         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                       </button>
                       <div class="w-full hidden md:flex mt-2 md:mt-0" id="navbar-hamburger">
-                        <ul class="flex flex-col md:flex-row gap-2 font-medium rounded-lg bg-gray-50 md:bg-black">
-                          <li>
-                            <a href="{{ route('register') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Register</a>
-                          </li>
-                          <li>
-                            <a href="{{ route('login') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Login</a>
-                          </li>
+                        <ul class="flex flex-col md:flex-row gap-2 font-medium rounded-lg bg-gray-50 md:bg-black items-center">
+                            @auth
+                                <li>
+                                    <a href="{{ route('profile') }}" class="block underline md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit font-bold">{{auth()->user()->username}}</span></a>
+                                </li>
+                            @endauth
+                            @guest
+                                <li>
+                                    <a href="{{ route('register') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Register</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('login') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Login</a>
+                                </li>
+                            @endguest
                           <li>
                             <a href="#" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Components</a>
                           </li>
+                          @auth
+                            <li>
+                                <form method="POST" action="{{route('logout')}}">
+                                    @csrf
+                                    <button type="submit" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
+                                        Sign out
+                                    </button>
+                                </form>
+                            </li>
+                          @endauth
                         </ul>
                       </div>
                     </div>

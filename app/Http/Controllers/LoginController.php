@@ -15,11 +15,10 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             'username' => 'required',
-            //'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if(!auth()->attempt($request->only('username', 'password'))) {
+        if(!auth()->attempt($request->only('username', 'password'), $request->remember)) {
             return back()->with('message', 'Incorrect credentials');
         }
 

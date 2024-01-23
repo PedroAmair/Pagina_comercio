@@ -12,7 +12,7 @@
         <header class="p-5 bg-black">
             <div class="md:flex justify-between items-center">
                 <div class="md:w-3/12">
-                    <a href="{{ route('index') }}">
+                    <a href="{{ route('home') }}">
                         <img src="{{ asset('img/logo/Logo7.png') }}" alt="logo company">
                     </a>
                 </div>
@@ -47,7 +47,7 @@
                         <ul class="flex flex-col md:flex-row gap-2 font-medium rounded-lg bg-gray-50 md:bg-black items-center">
                             @auth
                                 <li>
-                                    <a href="{{ route('profile') }}" class="block underline md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit font-bold">{{auth()->user()->username}}</span></a>
+                                    <a href="{{ route('profile', auth()->user()->username) }}" class="block underline md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit font-bold">{{auth()->user()->username}}</span></a>
                                 </li>
                             @endauth
                             @guest
@@ -78,7 +78,7 @@
             </div>
         </header>
 
-        @yield('title')
+        <h1 class="text-3xl text-center">@yield('title')</h1>
 
         @yield('content')
         

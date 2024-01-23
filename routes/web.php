@@ -22,7 +22,7 @@ use App\Http\Controllers\SearchController;
 */
 
 //Principal page
-Route::get('/', HomeController::class)->name('index');
+Route::get('/', HomeController::class)->name('home');
 
 //Registry and login
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
@@ -32,7 +32,7 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 //Profile
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profile/{user:username}', [ProfileController::class, 'index'])->name('profile');
 
 //Customer search
 Route::get('/searchs/{search}', [SearchController::class, 'index'])->name('userSearch');

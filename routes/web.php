@@ -32,7 +32,7 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 //Profile
-Route::get('/profile/{user:username}', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profiles/{user:username}', [ProfileController::class, 'index'])->name('profile');
 
 //Customer search
 Route::get('/searchs/{search}', [SearchController::class, 'index'])->name('userSearch');

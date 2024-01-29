@@ -4,7 +4,7 @@
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="10000">
         <!-- Carousel wrapper -->
-        <div class="relative h-36 overflow-hidden md:h-[22rem] xl:h-[35rem] 2xl:h-[52rem]">
+        <div class="relative h-36 overflow-hidden md:h-[22rem] xl:h-[33rem] 2xl:h-[50rem]">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/carrousel/ryzen.webp') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="ryzen image">
@@ -104,7 +104,7 @@
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'ssd'])}}">
                     <img src="{{ asset('img/components/ssd.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Solid State Drives</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white text-center">Solid State Drives</p>
                 </a>
             </div>
 
@@ -244,7 +244,7 @@
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'CM'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolermaster.png')}}" alt="cooler master logo">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolerMaster.png')}}" alt="cooler master logo">
                 </a>
                 </form>
             </div>

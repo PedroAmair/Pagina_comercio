@@ -74,42 +74,42 @@
 
         <div class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-3">
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="#">
+                <a href="{{route('searchs.index', ['category', 'motherboard'])}}">
                     <img src="{{ asset('img/components/motherboard.webp') }}" alt="motherboard image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Motherboards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="#">
+                <a href="{{route('searchs.index', ['category', 'processor'])}}">
                     <img src="{{ asset('img/components/processor.webp') }}" alt="processor image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPUs</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="#">
+                <a href="{{route('searchs.index', ['category', 'graphic card'])}}">
                     <img src="{{ asset('img/components/graphicCard.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Graphics Cards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="#">
+                <a href="{{route('searchs.index', ['category', 'ram memory'])}}">
                     <img src="{{ asset('img/components/ram.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">RAM sticks</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="#">
+                <a href="{{route('searchs.index', ['category', 'ssd'])}}">
                     <img src="{{ asset('img/components/ssd.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Solid State Drives</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="#">
+                <a href="{{route('searchs.index', ['category', 'cases'])}}">
                     <img src="{{ asset('img/components/case.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
                 </a>
@@ -198,51 +198,55 @@
 
         <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-5">
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/amd.png')}}" alt="amd logo">
+                <a href="{{route('searchs.index', ['brand', 'AMD'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/amd.png')}}" alt="intel logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/intel.png')}}" alt="intel logo">
+                <a href="{{route('searchs.index', ['brand', 'INTEL'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/intel.png')}}" alt="intel logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/nvidia.png')}}" alt="nvidia logo">
+                <a href="{{route('searchs.index', ['brand', 'NVIDIA'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/nvidia.png')}}" alt="nvidia logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/kingston.png')}}" alt="kingston logo">
+                <a href="{{route('searchs.index', ['brand', 'KINGSTON'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/kingston.png')}}" alt="kingston logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/thermaltake.png')}}" alt="kingston logo">
+                <a href="{{route('searchs.index', ['brand', 'THERMALTAKE'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/thermaltake.png')}}" alt="thermaltake logo">
                 </a>
+                </form>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/msi.png')}}" alt="msi logo">
+                <a href="{{route('searchs.index', ['brand', 'MSI'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/msi.png')}}" alt="msi logo">
                 </a>
+                </form>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/wd.png')}}" alt="wd logo">
+                <a href="{{route('searchs.index', ['brand', 'WD'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/wd.png')}}" alt="western digital logo">
                 </a>
+                </form>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="#">
-                    <img class="rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolerMaster.png')}}" alt="cooler master logo">
+                <a href="{{route('searchs.index', ['brand', 'CM'])}}">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolermaster.png')}}" alt="cooler master logo">
                 </a>
+                </form>
             </div>
         </div>
     </div>

@@ -35,7 +35,8 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/profiles/{user:username}', [ProfileController::class, 'index'])->name('profile');
 
 //Customer search
-Route::get('/searchs/{search}', [SearchController::class, 'index'])->name('userSearch');
+Route::get('/searchs/{searchtype}/{data}/', [SearchController::class, 'index'])->name('searchs.index');
+Route::get('/searchs/{product}', [SearchController::class, 'show'])->name('searchs.show');
 
 //Admin 
 //Products

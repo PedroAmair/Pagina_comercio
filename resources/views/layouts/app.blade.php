@@ -7,8 +7,9 @@
         @stack('styles')
         @vite('resources/css/app.css')
         @vite('resources/js/sliderProducts.js')
+        @livewireStyles
     </head>
-    <body class="antialiased max-w-[2600px]">
+    <body class="antialiased max-w-[2600px] flex flex-col min-h-screen">
         <header class="p-5 bg-black">
             <div class="md:flex justify-between items-center">
                 <div class="md:w-3/12">
@@ -18,16 +19,15 @@
                 </div>
 
                 <div class="md:w-6/12">
-                    <form class="flex gap-2 mt-3" action="{{ route('login') }}" method="POST">
-                        @csrf
+                    <form class="flex gap-2 mt-3" action="{{route('searchs.index', ['general', 'search'])}}" method="GET">
                         <div class="mb-3 w-full">
                             <input
                                 id="search"
                                 name="search"
                                 type="text"
-                                placeholder="Search"
+                                placeholder="Type to search"
                                 class="p-2 w-full rounded-lg"
-                                value="{{ old('search') }}"
+                                value=""
                             />
                         </div>
         
@@ -83,11 +83,11 @@
             </div>
         </header>
 
-        <h1 class="text-3xl text-center">@yield('title')</h1>
+        <h1 class="text-3xl text-center font-semibold">@yield('title')</h1>
 
         @yield('content')
         
-        <footer class="p-5 bg-black flex flex-col items-center mt-5">
+        <footer class="p-5 bg-black flex flex-col items-center mt-auto">
             <div class="flex gap-5">
                 <a class="text-white underline hover:text-zinc-500" href="#">Terms & conditions</a>
                 <a class="text-white underline hover:text-zinc-500" href="#">Privacy policy</a>
@@ -97,5 +97,6 @@
                 <div class="text-1xl text-white font-black">Pedro Amair - All rights reserved &#9400 {{ date('Y') }}</div>
             </div>
         </footer>
+        @livewireScripts
     </body>
 </html>

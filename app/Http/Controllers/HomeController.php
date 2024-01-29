@@ -10,8 +10,8 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $processors = Product::where('category', 'processor')->limit(10)->latest()->get();
-        $discounts = Product::where('price', '<', '200')->limit(10)->latest()->get();
+        $processors = Product::where('category', 'processor')->limit(20)->latest()->get();
+        $discounts = Product::where('price', '<', '200')->limit(20)->latest()->get();
 
         return view('home', [
             'processors' => $processors,

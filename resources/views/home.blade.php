@@ -244,7 +244,7 @@
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'CM'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolermaster.png')}}" alt="cooler master logo">
+                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolerMaster.png')}}" alt="cooler master logo">
                 </a>
                 </form>
             </div>

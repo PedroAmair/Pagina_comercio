@@ -47,7 +47,7 @@
     <div class="relative p-5 mt-4">
         <h2 class="text-black text-3xl mb-5">Choose your CPU</h2>
         <div>
-            <div class="absolute cursor-pointer object-cover md:p-2 left-1 top-32 md:top-28 2xl:p-5 2xl:top-36 min-[2500px]:top-44 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrow">
+            <div class="absolute cursor-pointer object-cover md:p-2 left-1 top-32 md:top-28 2xl:p-3 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrow">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -58,7 +58,7 @@
 
             <x-processors-list :processors="$processors" />
     
-            <div class="absolute cursor-pointer object-cover md:p-2 right-0 top-32 md:top-28 2xl:p-5 2xl:top-36 min-[2500px]:top-44 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrow">
+            <div class="absolute cursor-pointer object-cover md:p-2 right-0 top-32 md:top-28 2xl:p-3 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrow">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -76,42 +76,42 @@
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'motherboard'])}}">
                     <img src="{{ asset('img/components/motherboard.webp') }}" alt="motherboard image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Motherboards</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Motherboards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'processor'])}}">
                     <img src="{{ asset('img/components/processor.webp') }}" alt="processor image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPUs</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPUs</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'graphic card'])}}">
                     <img src="{{ asset('img/components/graphicCard.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Graphics Cards</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Graphics Cards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'ram memory'])}}">
                     <img src="{{ asset('img/components/ram.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">RAM sticks</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">RAM sticks</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'ssd'])}}">
                     <img src="{{ asset('img/components/ssd.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white text-center">Solid State Drives</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white text-center">Solid State Drives</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'cases'])}}">
                     <img src="{{ asset('img/components/case.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-3xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
                 </a>
             </div>
         </div>
@@ -120,7 +120,7 @@
     <div class="relative p-5 mt-4">
         <h2 class="text-black text-3xl mb-5">Our best deals</h2>
         <div>
-            <div class="absolute cursor-pointer object-cover md:p-2 left-1 top-32 md:top-28 2xl:p-5 2xl:top-36 min-[2500px]:top-44 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrowOf">
+            <div class="absolute cursor-pointer object-cover md:p-2 left-1 top-32 md:top-28 2xl:p-3 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrowOf">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -131,7 +131,7 @@
     
             <x-products-list :discounts="$discounts" />
     
-            <div class="absolute cursor-pointer object-cover md:p-2 right-0 top-32 md:top-28 2xl:p-5 2xl:top-36 min-[2500px]:top-44 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrowOf">
+            <div class="absolute cursor-pointer object-cover md:p-2 right-0 top-32 md:top-28 2xl:p-3 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrowOf">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />

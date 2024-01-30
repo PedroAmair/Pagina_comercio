@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-col justify-center items-center mt-10">
+    <div class="flex flex-col justify-center items-center mt-5">
         <div>
             <img class="w-80" src="{{ asset('img/logo/Logo4.png') }}" alt="login image">
         </div>
@@ -10,7 +10,7 @@
            Sign in
         </div>
 
-        <div class="bg-gray-100 shadow p-8 rounded-lg w-3.2/12">
+        <div class="border-2 border-gray-300 p-8 rounded-lg w-2/5 mb-5">
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">

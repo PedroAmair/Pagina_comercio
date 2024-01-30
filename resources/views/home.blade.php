@@ -4,7 +4,7 @@
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="10000">
         <!-- Carousel wrapper -->
-        <div class="relative h-36 overflow-hidden md:h-[22rem] xl:h-[33rem] 2xl:h-[50rem]">
+        <div class="relative h-36 overflow-hidden md:h-[22rem] xl:h-[28rem] 2xl:h-[40rem]">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/carrousel/ryzen.webp') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="ryzen image">
@@ -199,52 +199,52 @@
         <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-5">
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'AMD'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/amd.png')}}" alt="intel logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/amd.png')}}" alt="intel logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'INTEL'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/intel.png')}}" alt="intel logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/intel.png')}}" alt="intel logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'NVIDIA'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/nvidia.png')}}" alt="nvidia logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/nvidia.png')}}" alt="nvidia logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'KINGSTON'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/kingston.png')}}" alt="kingston logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/kingston.png')}}" alt="kingston logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'THERMALTAKE'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/thermaltake.png')}}" alt="thermaltake logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/thermaltake.png')}}" alt="thermaltake logo">
                 </a>
                 </form>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'MSI'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/msi.png')}}" alt="msi logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/msi.png')}}" alt="msi logo">
                 </a>
                 </form>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'WD'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/wd.png')}}" alt="western digital logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/wd.png')}}" alt="western digital logo">
                 </a>
                 </form>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'CM'])}}">
-                    <img class=" rounded-t-lg w-28 h-28 bg-gray-200 p-4" src="{{ asset('img/companiesLogos/coolerMaster.png')}}" alt="cooler master logo">
+                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/coolerMaster.png')}}" alt="cooler master logo">
                 </a>
                 </form>
             </div>

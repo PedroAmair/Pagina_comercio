@@ -9,7 +9,7 @@
         @vite('resources/js/sliderProducts.js')
         @livewireStyles
     </head>
-    <body class="antialiased max-w-[2600px] flex flex-col min-h-screen">
+    <body class="antialiased max-w-[2600px] bg-gray-100 flex flex-col min-h-screen">
         <header class="p-5 bg-black">
             <div class="md:flex justify-between items-center">
                 <div class="md:w-3/12">
@@ -83,9 +83,11 @@
             </div>
         </header>
 
-        <h1 class="text-3xl text-center font-semibold">@yield('title')</h1>
+        <div class="w-full lg:w-4/5 mx-auto bg-white">
+            <h1 class="text-3xl text-center font-semibold">@yield('title')</h1>
 
-        @yield('content')
+            @yield('content')
+        </div>
         
         <footer class="p-5 bg-black flex flex-col items-center mt-auto">
             <div class="flex gap-5">

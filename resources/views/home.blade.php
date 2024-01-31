@@ -260,7 +260,7 @@
                 </a>
                 <div class="p-5">
                     <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The new RX 7600 is out now</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The new RX 7600 is here</h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700">
                         AMD has released the new replacement for the famous RX 6600. It has the following technical specifications...
@@ -278,7 +278,7 @@
                 </a>
                 <div class="p-5">
                     <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">New games launched on Steam</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Games launched on Steam</h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700">
                         More than a dozen free titles have recently been launched on the popular digital gaming platform...
@@ -296,10 +296,10 @@
                 </a>
                 <div class="p-5">
                     <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">We review the RTX 4060 Ti</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">RTX 4060 Ti review</h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700">
-                        Nvidia has sent us an RTX 4060 Ti so we can test it and here's what we have to say about the company's new graphics card...
+                        Nvidia has sent us an RTX 4060 Ti so we can test it and here's what we have to say about the company's new graphics...
                     </p>
                     <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                         Read more

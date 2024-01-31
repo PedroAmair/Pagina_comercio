@@ -9,7 +9,7 @@
         @vite('resources/js/sliderProducts.js')
         @livewireStyles
     </head>
-    <body class="antialiased max-w-[2600px] bg-gray-100 flex flex-col min-h-screen">
+    <body class="antialiased max-w-[2600px] bg-gray-200 flex flex-col min-h-screen">
         <header class="p-5 bg-black">
             <div class="md:flex justify-between items-center">
                 <div class="md:w-3/12">

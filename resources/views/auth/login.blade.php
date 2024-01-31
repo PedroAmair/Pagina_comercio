@@ -58,7 +58,7 @@
                     type="submit"
                     value="Log in"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                    uppercase font-bold w-full p-3 text-white rounded-lg mt-4"
+                    uppercase font-bold w-1/2 p-3 text-white rounded-lg mt-4"
                 />
             </form>
         </div>

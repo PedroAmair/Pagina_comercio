@@ -83,7 +83,7 @@
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'processor'])}}">
                     <img src="{{ asset('img/components/processor.webp') }}" alt="processor image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPUs</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPU's</p>
                 </a>
             </div>
 

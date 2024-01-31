@@ -10,7 +10,7 @@
            Sign in
         </div>
 
-        <div class="border-2 border-gray-300 p-8 rounded-lg w-2/5 mb-5">
+        <div class="border-2 border-gray-300 p-8 rounded-lg w-2/5 mb-10">
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">

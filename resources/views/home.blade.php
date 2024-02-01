@@ -156,7 +156,7 @@
                             <path d="M14 12v-6.5a1.5 1.5 0 0 1 3 0v6.5" />
                           </svg>
                     </div>
-                    <p class="text-black text-base ml-2">Wide variety of products to satisfy all the needs of our clients</p>
+                    <p class="text-black text-base ml-2">Wide variety of products to satisfy all our clients needs</p>
                 </div>
     
                 <div class="flex justify-center items-center">

@@ -1,3 +1,18 @@
+<h2>E-commerce website/Sitio web de comercio electrónico(Work in progress - Trabajándolo actualmente)</h2>
+
+<h3>English</h3>
+
+<p>Web project about a website similar to Amazon/MercadoLibre/Bestbuy. Developed using Laravel framework and adding Livewire, Tailwind CSS, Flowbite and native JavaScript. The website is still under development.</p>
+
+<a href="https://awesomecomponents-e4d17a1d6680.herokuapp.com/">Website</a>
+
+<h3>Español</h3>
+
+<p>Proyecto web sobre una página similar a Amazon/MercadoLibre/Bestbuy. Desarrollado usando el framework Laravel y adicionando Livewire, Tailwind CSS, Flowbite y JavaScript nativo. El sitio web sigue en desarrollo.</p>
+
+<a href="<a href="https://awesomecomponents-e4d17a1d6680.herokuapp.com/">Website</a>">Sitio web</a>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

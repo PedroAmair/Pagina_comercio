@@ -20,12 +20,13 @@ class SearchController extends Controller
         }
 
         return view('search.searchPage', [
-            'results' => $results
+            'results' => $results,
         ]);
     }
 
     public function show(Product $product)
     {
+        $product->description = explode(PHP_EOL, $product->description);
 
         return view('search.searchElement',[
             'product' => $product

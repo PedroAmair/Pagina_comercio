@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="md:flex my-4 p-5">
-        <div class="w-2/3">
+        <div class="w-full md:w-2/3">
             <img class="mx-auto" src="{{ asset('uploads').'/'.$product->image }}" alt="{{$product->name}}">
         </div>
-        <div class="w-1/3 bg-gray-100 rounded-lg">
+        <div class="w-full md:w-1/3 bg-gray-100 rounded-lg">
             <div>
                 <h2 class="text-center text-3xl mt-2">{{$product->brand == 'AMD' ? $product->brand.' '.$product->name :  ucfirst(strtolower($product->brand)).' '.$product->name}}</h2>
             </div>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="flex flex-col justify-top gap-5">
                         <div>
-                            <div class="text-xl text-right">There still are:</div>
+                            <div class="text-xl text-center">There still are:</div>
                             <div class="text-2xl font-bold bg-green-200 rounded-lg text-center p-3">{{$product->quantity}}</div>
                         </div>
                         <div>
@@ -53,7 +53,7 @@
                     value="Purchase"
                     form="quantityForm"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                    uppercase font-bold w-full md:w-3/5 p-3 text-white rounded-lg mt-5 ml-5"
+                    uppercase font-bold w-full md:w-3/5 p-3 text-white rounded-lg mt-5 md:ml-5"
                 />
             </div>
         </div>

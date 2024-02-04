@@ -12,7 +12,7 @@
 
             <div>
                 <div class="m-5 text-2xl font-bold">Relevant details</div>
-                <div class="flex flex-col-2 justify-around">
+                <div class="flex flex-col-2 gap-5">
                     <div>
                         <ul class="ml-5">
                             @foreach ($product->description as $key=>$value)

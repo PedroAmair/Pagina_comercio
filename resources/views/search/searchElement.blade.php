@@ -12,8 +12,8 @@
 
             <div>
                 <div class="m-5 text-2xl font-bold">Relevant details</div>
-                <div class="flex flex-col-2">
-                    <div class="w-4/6">
+                <div class="flex flex-col-2 gap-5">
+                    <div class="w-3/5">
                         <ul class="ml-5">
                             @foreach ($product->description as $key=>$value)
                             <li class="list-disc ml-5 text-xl">{{$value}}</li>

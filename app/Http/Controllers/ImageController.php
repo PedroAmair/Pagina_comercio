@@ -15,7 +15,7 @@ class ImageController extends Controller
         $imageName = Str::uuid().".".$image->extension();
 
         $serverImage = Image::make($image);
-        $serverImage->fit(500, 500);
+        $serverImage->resize(500, 500);
 
         $imagePath = public_path('uploads').'/'.$imageName;
         $serverImage->save($imagePath);

@@ -21,9 +21,9 @@
                         </ul>
                     </div>
                     <div class="flex flex-col gap-5 mr-5">
-                        <div>
+                        <div class="flex flex-col items-center">
                             <div class="text-xl text-center">There still are:</div>
-                            <div class="text-2xl font-bold bg-green-200 rounded-full text-center p-3">{{$product->quantity}}</div>
+                            <div class="text-2xl font-bold bg-green-200 rounded-full text-center w-1/2 p-3">{{$product->quantity}}</div>
                         </div>
                         <div>
                             <div class="text-xl text-center">Price:</div>

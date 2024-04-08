@@ -1,25 +1,66 @@
 {
-  "_index-94c96da9.js": {
-    "file": "assets/index-94c96da9.js"
+  "_sweetalert2.all-2e02e51a.js": {
+    "file": "assets/sweetalert2.all-2e02e51a.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-efe9c6cf.css",
+    "file": "assets/app-b4135d58.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-12afaadc.js",
+    "file": "assets/app-0dc757f0.js",
     "imports": [
-      "_index-94c96da9.js"
+      "_sweetalert2.all-2e02e51a.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
   },
-  "resources/js/sliderProducts.js": {
-    "file": "assets/sliderProducts-ffde7b64.js",
+  "resources/js/confirmationAlert.js": {
+    "file": "assets/confirmationAlert-f0552f5c.js",
     "imports": [
-      "_index-94c96da9.js"
+      "_sweetalert2.all-2e02e51a.js"
     ],
+    "isEntry": true,
+    "src": "resources/js/confirmationAlert.js"
+  },
+  "resources/js/confirmationDeleteAlert.js": {
+    "file": "assets/confirmationDeleteAlert-4faf8d5c.js",
+    "imports": [
+      "_sweetalert2.all-2e02e51a.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/confirmationDeleteAlert.js"
+  },
+  "resources/js/deleteDone.js": {
+    "file": "assets/deleteDone-b3bfb918.js",
+    "imports": [
+      "_sweetalert2.all-2e02e51a.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/deleteDone.js"
+  },
+  "resources/js/flowbiteFuncionalities.js": {
+    "file": "assets/flowbiteFuncionalities-94c96da9.js",
+    "isEntry": true,
+    "src": "resources/js/flowbiteFuncionalities.js"
+  },
+  "resources/js/imagesSelector.js": {
+    "file": "assets/imagesSelector-e5d3449c.js",
+    "isEntry": true,
+    "src": "resources/js/imagesSelector.js"
+  },
+  "resources/js/personalButtons.js": {
+    "file": "assets/personalButtons-efa19d9b.js",
+    "isEntry": true,
+    "src": "resources/js/personalButtons.js"
+  },
+  "resources/js/publicationOptions.js": {
+    "file": "assets/publicationOptions-99566eee.js",
+    "isEntry": true,
+    "src": "resources/js/publicationOptions.js"
+  },
+  "resources/js/sliderProducts.js": {
+    "file": "assets/sliderProducts-6865845c.js",
     "isEntry": true,
     "src": "resources/js/sliderProducts.js"
   }

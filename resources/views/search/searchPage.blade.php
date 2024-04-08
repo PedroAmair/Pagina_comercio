@@ -1,20 +1,22 @@
 @extends('layouts.app')
 
 @section('title')
+<div class="my-5">
     Search results
+</div>
 @endsection
 
 @section('content')
     @if ($results->count())
         <div class="mt-4 p-5 grid gap-10 md:grid-cols-3 lg:grid-cols-5 align-center">
             @foreach ($results as $result)
-                <div class="max-w-52 min-w-10 p-3 hover:shadow-sky-800 hover:shadow-xl">
-                    <a href="{{route('searchs.show', $result->id)}}">
-                        <img src="{{asset('uploads').'/'.$result->image}}" alt="{{$result->name}}">
+                <div class="hover:shadow-xl hover:shadow-sky-200 max-w-52 min-w-10">
+                    <a href="{{route('searchs.show', $result)}}">
+                        <img class="mx-auto h-1/2" src="{{asset('uploads').'/'.$result->image[0]}}" alt="{{$result->product}}">
                     </a>
 
                     <div>
-                        <p class="text-center font-bold 2xl:text-xl">{{$result->name}}</p>
+                        <p class="text-center font-bold 2xl:text-xl">{{$result->brand === 'amd' || $result->brand === 'evga' || $result->brand === 'msi' || $result->brand === 'xfx' ? strtoupper($result->brand).' '.$result->product :  ucwords($result->brand).' '.$result->product}}</p>
                         <p class="text-center text-green-700 font-bold text-2xl">{{$result->price}} $</p>
                     </div>
                 </div>
@@ -25,6 +27,6 @@
             {{$results->links()}}
         </div>
     @else
-        <p class="mt-4 p-5 uppercase text-4xl text-gray-200 text-center m-auto">No results for your search</p>
+        <p class="mt-[5%] uppercase text-4xl text-gray-200 text-center m-auto">No results for your search</p>
     @endif
 @endsection

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div id="default-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="10000">
         <!-- Carousel wrapper -->
         <div class="relative h-36 overflow-hidden md:h-[22rem] xl:h-[28rem] 2xl:h-[40rem]">
@@ -58,7 +57,7 @@
 
             <x-processors-list :processors="$processors" />
     
-            <div class="absolute cursor-pointer object-cover right-0 top-32 lg:top-28 2xl:p-1 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrow">
+            <div class="absolute cursor-pointer object-cover right-1 top-32 lg:top-28 2xl:p-1 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrow">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -109,7 +108,7 @@
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
-                <a href="{{route('searchs.index', ['category', 'cases'])}}">
+                <a href="{{route('searchs.index', ['category', 'case'])}}">
                     <img src="{{ asset('img/components/case.webp') }}" alt="graphic card image">
                     <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
                 </a>
@@ -131,7 +130,7 @@
     
             <x-products-list :discounts="$discounts" />
     
-            <div class="absolute cursor-pointer object-cover right-0 top-32 md:top-28 2xl:p-1 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrowOf">
+            <div class="absolute cursor-pointer object-cover right-1 top-32 md:top-28 2xl:p-1 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="rightArrowOf">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l14 0" />
@@ -196,55 +195,55 @@
     <div class="mt-4 p-5">
         <h2 class="text-black text-3xl mb-5">Search for products of your favorite brand</h2>
 
-        <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-5">
+        <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-2 2xl:gap-0">
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'AMD'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/amd.png')}}" alt="intel logo">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/amd.webp')}}" alt="intel logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'INTEL'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/intel.png')}}" alt="intel logo">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/intel.webp')}}" alt="intel logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'NVIDIA'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/nvidia.png')}}" alt="nvidia logo">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/nvidia.webp')}}" alt="nvidia logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'KINGSTON'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/kingston.png')}}" alt="kingston logo">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/kingston.webp')}}" alt="kingston logo">
                 </a>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'THERMALTAKE'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/thermaltake.png')}}" alt="thermaltake logo">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/thermaltake.webp')}}" alt="thermaltake logo">
                 </a>
                 </form>
             </div>
 
             <div class="transition hover:scale-125">
                 <a href="{{route('searchs.index', ['brand', 'MSI'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/msi.png')}}" alt="msi logo">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/msi.webp')}}" alt="msi logo">
                 </a>
                 </form>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="{{route('searchs.index', ['brand', 'WD'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/wd.png')}}" alt="western digital logo">
+                <a href="{{route('searchs.index', ['brand', 'WESTERN DIGITAL'])}}">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/wd.webp')}}" alt="western digital logo">
                 </a>
                 </form>
             </div>
 
             <div class="transition hover:scale-125">
-                <a href="{{route('searchs.index', ['brand', 'CM'])}}">
-                    <img class="w-28 h-28 p-3" src="{{ asset('img/companiesLogos/coolerMaster.png')}}" alt="cooler master logo">
+                <a href="{{route('searchs.index', ['brand', 'COOLER MASTER'])}}">
+                    <img class="w-28 h-28 p-2" src="{{ asset('img/companiesLogos/coolerMaster.webp')}}" alt="cooler master logo">
                 </a>
                 </form>
             </div>
@@ -327,4 +326,8 @@
             </article>
         </div>      
     </section>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/sliderProducts.js')
 @endsection

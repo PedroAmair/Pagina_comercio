@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -12,11 +12,15 @@ class SearchController extends Controller
         $search = $request->search;
 
         if($searchType == 'brand') {
-            $results = Product::where('brand', $data)->orWhere('name','LIKE', '%'.$data.'%')->latest()->paginate(30);
+            $results = Publication::select('id','product', 'image', 'price', 'brand')->where('brand', $data)->orWhere('product','LIKE', '%'.$data.'%')->latest()->paginate(30);
         }else if($searchType == 'category') {
-            $results = Product::where('category', $data)->latest()->paginate(30); 
+            $results = Publication::select('id','product', 'image', 'price', 'brand')->where('category', $data)->latest()->paginate(30); 
         }else if($searchType == 'general') {
-            $results = Product::where('brand', $search)->orWhere('name','LIKE', '%'.$search.'%')->latest()->paginate(30);
+            $results = Publication::select('id','product', 'image', 'price', 'brand')->where('brand', $search)->orWhere('product','LIKE', '%'.$search.'%')->latest()->paginate(30);
+        }
+
+        foreach($results as $result) {
+            $result->image = explode(",", $result->image);
         }
 
         return view('search.searchPage', [
@@ -24,12 +28,13 @@ class SearchController extends Controller
         ]);
     }
 
-    public function show(Product $product)
+    public function show(Publication $publication)
     {
-        $product->description = explode(PHP_EOL, $product->description);
+        $publication->description = explode(PHP_EOL, $publication->description);
+        $publication->image = explode(",", $publication->image);
 
         return view('search.searchElement',[
-            'product' => $product
+            'publication' => $publication
         ]);
     }
 }

@@ -7,7 +7,13 @@ export default {
     "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php"
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs' : '440px',
+        '3xl' : '2000px',
+        '4xl' : '3000px',
+      },
+    },
   },
   plugins: [
     require('flowbite/plugin')

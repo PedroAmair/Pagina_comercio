@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){s()});function s(){const d=document.querySelectorAll(".disabled");d.disabled&&d.forEach(e=>{e.classList.remove("cursor-pointer"),e.classList.add("pointer-events-none"),e.classList.add("cursor-default")})}

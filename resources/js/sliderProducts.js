@@ -1,5 +1,3 @@
-import 'flowbite';
-
 const leftArrow = document.querySelector('#leftArrow');
 const rightArrow = document.querySelector('#rightArrow');
 const slider = document.querySelector('#slider');

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){n()});function n(){const t=document.querySelector(".main");document.querySelectorAll(".thumbnail").forEach(e=>{const c=document.querySelector(".active");e.addEventListener("click",function(){c.classList.remove("active"),this.classList.add("active"),t.src=this.src})})}

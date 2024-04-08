@@ -14,18 +14,35 @@
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="name" id="name" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Full name
+                    <label for="fName" id="fName" class="mb-2 block uppercase text-gray-500 font-bold">
+                        First name
                     </label>
                     <input
-                        id="name"
-                        name="name"
+                        id="fName"
+                        name="fName"
                         type="text"
-                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
-                        value="{{ old('name') }}"
+                        class="border p-3 w-full rounded-lg @error('fName') border-red-500 @enderror"
+                        value="{{ old('fName') }}"
                     />
 
-                    @error('name')
+                    @error('fName')
+                        <p class="text-red-500 my-2 text-sm">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="lName" id="lName" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Last name
+                    </label>
+                    <input
+                        id="lName"
+                        name="lName"
+                        type="text"
+                        class="border p-3 w-full rounded-lg @error('lName') border-red-500 @enderror"
+                        value="{{ old('lName') }}"
+                    />
+
+                    @error('lName')
                         <p class="text-red-500 my-2 text-sm">{{ $message }}</p>
                     @enderror
                 </div>

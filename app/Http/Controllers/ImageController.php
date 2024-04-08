@@ -9,17 +9,20 @@ use Intervention\Image\Facades\Image;
 class ImageController extends Controller
 {
     public function store(Request $request)
-    {
+    {   
         $image = $request->file('file');
 
-        $imageName = Str::uuid().".".$image->extension();
-
+        $imageName = Str::uuid()."."."webp";
+        
         $serverImage = Image::make($image);
-        $serverImage->resize(500, 500);
+        $serverImage->resize(null, 600, function($constraint){
+            $constraint->aspectRatio();
+        });
+        $serverImage->encode('webp', 90);
 
         $imagePath = public_path('uploads').'/'.$imageName;
         $serverImage->save($imagePath);
-
+         
         return response()->json(['image' => $imageName]);
     }
 }

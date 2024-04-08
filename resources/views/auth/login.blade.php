@@ -47,7 +47,7 @@
                 </div>
 
                 <div>
-                    <input type="checkbox" name="remember"><label for="remember" id="remember" class="text-gray-500 font-bold"> Remember me
+                    <input type="checkbox" name="remember"><label for="remember" id="remember" class="text-gray-500 font-bold">Remember me
                 </div>
 
                 @if (session('message'))

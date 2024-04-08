@@ -17,21 +17,24 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:30',
+            'fName' => 'required|max:30',
+            'lName' => 'required|max:30',
             'username' => 'required|unique:users|min:2|max:30',
             'email' => 'required|unique:users|email|max:60',
             'password' => 'required|confirmed|min:6'
         ]);
 
         User::create([
-            'name' => $request->name,
+            'fname' => $request->fName,
+            'lname' => $request->lName,
             'username' => Str::lower($request->username), //El lower no hace diferencia al buscar
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'image' => 'user.png'
         ]);
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 }

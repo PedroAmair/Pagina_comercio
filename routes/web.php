@@ -1,14 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PublicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,18 +31,21 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-//Profile
-Route::get('/profiles/{user:username}', [ProfileController::class, 'index'])->name('profile');
+//Personal space and profile
+Route::get('/personal/{user:username}', [PersonalController::class, 'index'])->name('personal');
+Route::patch('/personal/{user:username}', [PersonalController::class, 'update'])->name('personal.update');
 
-//Customer search
-Route::get('/searchs/{searchtype}/{data}/', [SearchController::class, 'index'])->name('searchs.index');
-Route::get('/searchs/{product}', [SearchController::class, 'show'])->name('searchs.show');
-
-//Admin 
-//Products
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+//Publications
+Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');
+Route::get('/publications/create', [PublicationController::class, 'create'])->name('publications.create');
+Route::post('/publications', [PublicationController::class, 'store'])->name('publications.store');
+Route::get('/publications/{publication}/edit', [PublicationController::class, 'edit'])->name('publications.edit');
+Route::patch('/publications/{publication}', [PublicationController::class, 'update'])->name('publications.update');
+Route::delete('/publications/{publication}', [PublicationController::class, 'destroy'])->name('publications.destroy');
 
 //Images
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
+
+//Customer search
+Route::get('/searchs/{searchtype}/{data}/', [SearchController::class, 'index'])->name('searchs.index');
+Route::get('/searchs/{publication}', [SearchController::class, 'show'])->name('searchs.show');

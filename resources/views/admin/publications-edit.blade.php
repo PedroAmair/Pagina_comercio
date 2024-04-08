@@ -1,0 +1,164 @@
+@extends('layouts.app')
+
+@section('title')
+<div class="pt-3 font-bold">
+    Edit product
+</div>
+@endsection
+
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+@endpush
+
+@section('content')
+    <div class="m-5 rounded-lg lg:flex gap-2 items-center bg-white">
+        <div class="flex flex-col items-center lg:w-1/3 md:pl-5">
+            <p class="font-bold">Hardware image</p>
+            <p class="my-2 md:mb-3">(Max: 5 files)</p>
+            <form action="{{ route('images.store') }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-5/6 md:w-full h-96 rounded flex flex-col justify-center items-center">
+                @csrf
+            </form>
+        </div>
+
+        <form action="{{ route('publications.update', $bdData) }}" method="POST" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">
+            @csrf
+            @method('PATCH')
+            <fieldset class="p-5 border-4 border-gray-200 rounded-lg md:grid md:grid-cols-3 md:gap-5">
+                <legend class="font-bold">Hardware information</legend>
+                <div class="mb-3 col-span-2">
+                    <label for="product" id="product" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Product name
+                    </label>
+                    <input
+                        id="product"
+                        name="product"
+                        type="text"
+                        class="border p-3 w-full rounded-lg @error('product') border-red-500 @enderror"
+                        value="{{ $bdData->product }}"
+                    />
+    
+                    @error('product')
+                        <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                    @enderror
+                </div>
+    
+                <div class="mb-3">
+                    <label for="brand" id="brand" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Brand
+                    </label>
+                    <input
+                        id="brand"
+                        name="brand"
+                        type="text"
+                        class="border p-3 w-full rounded-lg @error('brand') border-red-500 @enderror"
+                        value="{{ $bdData->brand }}"
+                    />
+    
+                    @error('brand')
+                        <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                    @enderror
+                </div>
+    
+                <div class="mb-3">
+                    <label for="category" id="category" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Category
+                    </label>
+                    <select name="category" id="category" class="border p-3 w-full rounded-lg">
+                        <option value="{{ $bdData->category }}" selected>{{$bdData->category}}</option>
+                        <option value="motherboard">Motherboard</option>
+                        <option value="processor">Processor</option>
+                        <option value="graphic card">Graphic card</option>
+                        <option value="ssd">Solid units state</option>
+                        <option value="case">PC Case</option>
+                        <option value="ram memory">Ram memory</option>
+                    </select>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="quantity" id="quantity" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Quantity
+                    </label>
+                    <input
+                        id="quantity"
+                        name="quantity"
+                        type="number"
+                        class="border p-3 w-full rounded-lg @error('quantity') border-red-500 @enderror"
+                        value="{{ $bdData->quantity }}"
+                    />
+    
+                    @error('quantity')
+                        <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                    @enderror
+                </div>
+    
+                <div class="mb-3">
+                    <label for="price" id="price" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Price
+                    </label>
+                    <input
+                        id="price"
+                        name="price"
+                        type="text"
+                        class="border p-3 w-full rounded-lg @error('price') border-red-500 @enderror"
+                        value="{{ $bdData->price }}"
+                    />
+    
+                    @error('price')
+                        <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="col-start-1 col-span-1">
+                    <label for="condition" id="condition" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Condition
+                    </label>
+                    <select name="condition" id="condition" class="border p-3 w-full rounded-lg">
+                        <option value="{{ $bdData->condition }}" selected>{{ $bdData->condition === 1 ? 'New' : ($bdData->condition === 2 ? 'Used' : 'Refurbished') }}</option>
+                        <option value="1">New</option>
+                        <option value="2">Used</option>
+                        <option value="3">Refurbished</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 col-start-2 col-span-2">
+                    <label for="description" id="description" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Description <span class="lowercase">(place one technical feature per line)</span>
+                    </label>
+                    <textarea
+                        name="description"
+                        rows="6"
+                        class="border p-3 w-full rounded-lg @error('description') border-red-500 @enderror">
+                            {{ $bdData->description }}
+                    </textarea>
+    
+                    @error('description')
+                        <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <input
+                        name="image[]"
+                        type="hidden"
+                        value="{{old('image.0') ?? $bdData->image}}"
+                    />
+
+                    @error('image')
+                        <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                    @enderror
+                </div>
+    
+                <input 
+                    type="submit"
+                    value="Proceed"
+                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                    uppercase font-bold w-full xs:w-1/3 md:w-2/3 lg:w-full xl:w-2/3 p-3 text-white rounded-lg mt-4 col-start-1 col-end-1"
+                />
+            </fieldset>  
+        </form>
+    </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/app.js')
+@endsection

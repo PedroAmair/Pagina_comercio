@@ -12,11 +12,11 @@ class SearchController extends Controller
         $search = $request->search;
 
         if($searchType == 'brand') {
-            $results = Publication::select('id','product', 'image', 'price', 'brand')->where('brand', $data)->orWhere('product','LIKE', '%'.$data.'%')->latest()->paginate(30);
+            $results = Publication::select('id','product', 'image', 'price', 'brand')->where([['brand', $data], ['status', 1]])->orWhere([['product','LIKE', '%'.$data.'%'], ['status', 1]])->latest()->paginate(30);
         }else if($searchType == 'category') {
-            $results = Publication::select('id','product', 'image', 'price', 'brand')->where('category', $data)->latest()->paginate(30); 
+            $results = Publication::select('id','product', 'image', 'price', 'brand')->where([['category', $data],['status', 1]])->latest()->paginate(30); 
         }else if($searchType == 'general') {
-            $results = Publication::select('id','product', 'image', 'price', 'brand')->where('brand', $search)->orWhere('product','LIKE', '%'.$search.'%')->latest()->paginate(30);
+            $results = Publication::select('id','product', 'image', 'price', 'brand')->where([['brand', $search], ['status', 1]])->orWhere([['product','LIKE', '%'.$search.'%'], ['status', 1]])->latest()->paginate(30);
         }
 
         foreach($results as $result) {

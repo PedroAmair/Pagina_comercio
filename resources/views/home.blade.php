@@ -43,7 +43,7 @@
         </button>
     </div>
 
-    <div class="relative p-5 mt-4">
+    <div class="relative p-3 mt-4">
         <h2 class="text-black text-3xl mb-5">Choose your CPU</h2>
         <div>
             <div class="absolute cursor-pointer object-cover left-1 top-32 lg:top-28 2xl:p-1 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrow">
@@ -68,55 +68,55 @@
         </div>
     </div>
 
-    <div class="mt-4 p-5">
+    <div class="mt-4 p-3">
         <h2 class="text-black text-3xl mb-5">What are you looking for?</h2>
 
-        <div class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-3">
+        <div class="grid xs:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-3">
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'motherboard'])}}">
                     <img src="{{ asset('img/components/motherboard.webp') }}" alt="motherboard image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Motherboards</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-lg md:text-xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Motherboards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'processor'])}}">
                     <img src="{{ asset('img/components/processor.webp') }}" alt="processor image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPU's</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-lg md:text-xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">CPU's</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'graphic card'])}}">
                     <img src="{{ asset('img/components/graphicCard.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Graphics Cards</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-lg md:text-xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">Graphics Cards</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'ram memory'])}}">
                     <img src="{{ asset('img/components/ram.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">RAM sticks</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-lg md:text-xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">RAM sticks</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'ssd'])}}">
                     <img src="{{ asset('img/components/ssd.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white text-center">Solid State Drives</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-lg md:text-xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white text-center">Solid State Drives</p>
                 </a>
             </div>
 
             <div class="relative hover:visible hover:opacity-100 shadow-xl shadow-gray-800">
                 <a href="{{route('searchs.index', ['category', 'case'])}}">
                     <img src="{{ asset('img/components/case.webp') }}" alt="graphic card image">
-                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-2xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
+                    <p class="absolute flex justify-center items-center inset-0 bg-black text-white font-bold text-lg md:text-xl underline underline-offset-8 decoration-solid decoration-red-950 uppercase transition-opacity duration-400 opacity-0 hover:visible hover:opacity-100 hover:border-2 border-white">PC Cases</p>
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="relative p-5 mt-4">
+    <div class="relative p-3 mt-4">
         <h2 class="text-black text-3xl mb-5">Our best deals</h2>
         <div>
             <div class="absolute cursor-pointer object-cover left-1 top-32 md:top-28 2xl:p-1 2xl:top-32 min-[2500px]:top-40 translate-x-0 md:translate-y-3 bg-sky-800 hover:bg-sky-900 rounded-lg" id="leftArrowOf">
@@ -192,7 +192,7 @@
         <img loading="lazy" class="h-96 hidden md:block" src="{{ asset('img/offerSection/pointingMen.png') }}" alt="pointing men image">
     </div>
 
-    <div class="mt-4 p-5">
+    <div class="mt-4 p-3">
         <h2 class="text-black text-3xl mb-5">Search for products of your favorite brand</h2>
 
         <div class="mt-5 grid justify-items-center grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-2 2xl:gap-0">
@@ -250,7 +250,7 @@
         </div>
     </div>
 
-    <section class="mt-4 p-5">
+    <section class="mt-4 p-3">
         <h2 class="text-black text-3xl mb-5">Don't forget to check our news...</h2>
         <div class="bg-blue-950 py-5 px-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center">
             <article class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">

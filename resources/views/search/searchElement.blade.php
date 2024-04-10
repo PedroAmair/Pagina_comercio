@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="md:flex m-4 flex flex-col md:flex-row gap-3">
+    <div class="md:flex md:m-4 flex flex-col md:flex-row">
         <div class="w-full md:w-2/3">
             <div class="grid gap-4 justify-items-center">
                 <div>
@@ -22,19 +22,19 @@
             </div>
 
             <div>
-                <div class="m-5 text-2xl font-bold">Relevant details</div>
-                <div class="flex flex-col-2 gap-5">
-                    <div class="w-3/5">
-                        <ul class="ml-5">
+                <div class=" text-center sm:text-left mt-3 sm:ml-5 text-2xl font-bold">Relevant details</div>
+                <div class="flex flex-col sm:flex-row sm:justify-around">
+                    <div>
+                        <ul class="md:ml-5 text-center sm:text-left mb-5 sm:mb-0">
                             @foreach ($publication->description as $description)
-                            <li class="list-disc ml-5 text-xl">{{$loop->index === 5 && $publication->category === 'processor' ? strtoupper($description) : ucfirst($description)}}</li>
+                            <li class="sm:list-disc ml-5 text-xl">{{$loop->index === 5 && $publication->category === 'processor' ? strtoupper($description) : ucfirst($description)}}</li>
                             @endforeach
                         </ul>
                     </div>
-                    <div class="flex flex-col gap-5 mr-5">
-                        <div class="flex flex-col items-center">
+                    <div class="flex justify-around sm:justify-start sm:flex-col sm:gap-3 md:mt-[-.2rem]">
+                        <div class="grid md:grid-cols-1 justify-items-center">
                             <div class="text-xl text-center">There still are:</div>
-                            <div class="text-2xl font-bold bg-green-200 rounded-full text-center w-1/2 p-3">{{$publication->quantity}}</div>
+                            <div class="text-2xl font-bold bg-green-200 rounded-full text-center w-1/2 sm:w-16 p-3">{{$publication->quantity}}</div>
                         </div>
                         <div>
                             <div class="text-xl text-center">Price:</div>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="my-5 flex gap-2 justify-center">
+                <div class="my-5 flex justify-center gap-2 md:gap-0 p-2">
                     <div class="text-xl">
                         How many units do you want? :
                     </div>
@@ -57,7 +57,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="mx-5 flex items-center gap-1">
+                <div class="mx-5 flex flex-col sm:flex-row items-center gap-1">
                     <p class="font-bold">Seller: <a class="text-blue-700" href="">{{ucfirst($publication->user->username)}}</p>
                     <img class="rounded-full h-10 w-10" src="{{asset('uploads/profilePhotos').'/'.$publication->user->image}}" alt="user image"></a>
                     <p class="font-bold ml-3">Condition: 

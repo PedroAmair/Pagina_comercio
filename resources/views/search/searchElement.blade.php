@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="my-5 flex justify-center gap-2 md:gap-0 p-2">
+                <div class="my-5 flex justify-center gap-2 p-2">
                     <div class="text-xl">
                         How many units do you want? :
                     </div>

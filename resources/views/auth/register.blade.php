@@ -10,7 +10,7 @@
            Sign up
         </div>
 
-        <div class="border-2 border-gray-300 p-8 rounded-lg w-2/5 mb-10">
+        <div class="border-2 border-gray-300 p-8 rounded-lg w-4/5 md:w-2/5 xl:w-2/6 mb-10">
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="mb-3">

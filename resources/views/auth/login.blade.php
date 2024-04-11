@@ -10,7 +10,7 @@
            Sign in
         </div>
 
-        <div class="border-2 border-gray-300 p-8 rounded-lg w-2/5 mb-10">
+        <div class="border-2 border-gray-300 p-8 rounded-lg w-4/5 md:w-2/5 xl:w-2/6 mb-10">
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -47,7 +47,7 @@
                 </div>
 
                 <div>
-                    <input type="checkbox" name="remember"><label for="remember" id="remember" class="text-gray-500 font-bold">Remember me
+                    <input type="checkbox" name="remember"><label for="remember" id="remember" class="text-gray-500 font-bold"> Remember me
                 </div>
 
                 @if (session('message'))

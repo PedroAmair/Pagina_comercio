@@ -10,7 +10,7 @@
            Sign in
         </div>
 
-        <div class="border-2 border-gray-300 p-8 rounded-lg w-4/5 md:w-2/5 xl:w-2/6 mb-10">
+        <div class="border-2 border-gray-300 p-8 rounded-lg w-4/5 md:w-3/5 xl:w-1/2 2xl:w-2/6 mb-10">
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -58,7 +58,7 @@
                     type="submit"
                     value="Log in"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                    uppercase font-bold w-1/2 p-3 text-white rounded-lg mt-4"
+                    uppercase font-bold w-full sm:w-5/12 md:w-2/3 xl:w-1/2 p-3 text-white rounded-lg mt-4"
                 />
             </form>
         </div>

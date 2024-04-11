@@ -11,16 +11,15 @@
 @endpush
 
 @section('content')
-    <div class="m-5 rounded-lg lg:flex gap-2 items-center bg-white">
-        <div class="flex flex-col items-center lg:w-1/3 md:pl-5">
-            <p class="font-bold">Hardware image</p>
-            <p class="my-2 md:mb-3">(Max: 5 files)</p>
-            <form action="{{ route('images.store') }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-5/6 md:w-full h-96 rounded flex flex-col justify-center items-center">
+    <div class="m-5 rounded-lg xl:flex gap-2 items-center bg-white">
+        <div class="flex flex-col gap-3 items-center xl:w-1/3 md:pl-5">
+            <p class="font-bold">Hardware image<span class="font-normal"> (Max: 5 files)</span></p>
+            <form action="{{route('images.store')}}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-5/6 md:w-full h-96 xl:h-[37rem] xl:mb-3 rounded flex flex-col justify-center items-center">
                 @csrf
             </form>
         </div>
 
-        <form action="{{ route('publications.store') }}" method="POST" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">
+        <form action="{{route('publications.store')}}" method="POST" class="mt-2 xl:w-2/3 xl:pr-5 xl:pb-4">
             @csrf
             <fieldset class="p-5 border-4 border-gray-200 rounded-lg md:grid md:grid-cols-3 md:gap-5">
                 <legend class="font-bold">Hardware information</legend>

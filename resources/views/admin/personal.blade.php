@@ -12,7 +12,8 @@
             <x-sell-button />
         </div>
         <div class="w-8/12">
-            <p class="text-lg text-center">Hello <span class="font-bold">{{ucfirst($user->username)}}</span>.
+            <p class="text-lg text-center">
+                Hello <span class="font-bold">{{ucfirst($user->username)}}</span>.
                 Welcome to your personal spot where you can change your 
                 profile, see the products you buy and sell, change your 
                 payment methods and basically have a detailed info of 

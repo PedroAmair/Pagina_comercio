@@ -1,4 +1,4 @@
 <?php
-$received = $_POST['name'];
-unlink($received);
+    $received = $_POST['name'];
+    unlink($received);
 ?>

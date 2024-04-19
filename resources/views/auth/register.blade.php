@@ -116,6 +116,17 @@
                     uppercase font-bold w-full sm:w-5/12 md:w-2/3 xl:w-1/2 p-3 text-white rounded-lg mt-4"
                 />
             </form>
+            <!--<div class="mt-8">
+                <p class="mb-2 block uppercase text-gray-500 font-bold text-center">You can also register using: </p>
+                <div class="flex flex-col gap-2 sm:flex-row sm:justify-around">
+                    <a href="{{route('auth.redirect')}}" class="border border-black p-2 uppercase hover:text-black font-bold text-gray-500 text-center rounded-lg w-full flex items-center justify-center">
+                        <img class="w-8 h-8" src="{{asset('img/authLogos/logoFacebook.png')}}" alt="logo Facebook"> Facebook
+                    </a>
+                    <a href="" class=" border border-black p-2 uppercase hover:text-black font-bold text-gray-500 text-center rounded-lg w-full flex items-center justify-center">
+                        <img class="w-8 h-8" src="{{asset('img/authLogos/logoGoogle.png')}}" alt="logo Google"> Google
+                    </a>
+                </div>
+            </div>-->
         </div>
     </div>
 @endsection

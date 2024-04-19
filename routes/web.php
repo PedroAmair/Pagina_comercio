@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -30,6 +31,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])->name('auth.redirect');
+Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.callback');
 
 //Personal space and profile
 Route::get('/personal/{user:username}', [PersonalController::class, 'index'])->name('personal');

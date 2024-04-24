@@ -92,8 +92,8 @@
         
         <footer class="p-5 bg-black flex flex-col items-center mt-auto">
             <div class="flex gap-5">
-                <a class="text-white underline hover:text-zinc-500" href="#">Terms & conditions</a>
-                <a class="text-white underline hover:text-zinc-500" href="#">Privacy policy</a>
+                <a class="text-white underline hover:text-zinc-500" href="{{route('privacyPolicy')}}">Privacy policy</a>
+                <a class="text-white underline hover:text-zinc-500" href="{{route('dataDeletionFacebook')}}">Instructions for data deletion</a>
             </div>
 
             <div>

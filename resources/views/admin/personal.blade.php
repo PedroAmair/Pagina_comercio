@@ -92,7 +92,7 @@
                         />
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 {{$user->password ? '' : 'hidden'}}">
                         <input type="checkbox" name="changePassword" id="changePassword" @checked(session('message'))><label for="changePassword" id="changePassword" class="text-gray-500 font-bold uppercase"> Change password
                     </div>
 
@@ -136,7 +136,7 @@
                             id="newPassword_confirmation"
                             name="newPassword_confirmation"
                             type="password"
-                            class="border p-3 w-full rounded-lg @error('assword_confirmation') border-red-500 @enderror"
+                            class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500 @enderror"
                         />
                         
                     </div>

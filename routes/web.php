@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DataDeletionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\DataDeletionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +33,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-Route::get('/facebook/auth/redirect', [AuthController::class, 'redirect'])->name('facebook.auth.redirect');
-Route::get('/facebook/auth/callback', [AuthController::class, 'callback'])->name('facebook.auth.callback');
+Route::get('/{provider}/auth/redirect', [AuthController::class, 'redirect'])->name('provider.auth.redirect');
+Route::get('/{provider}/auth/callback', [AuthController::class, 'callback'])->name('provider.auth.callback');
 
 //Personal space and profile
 Route::get('/personal/{user:username}', [PersonalController::class, 'index'])->name('personal');

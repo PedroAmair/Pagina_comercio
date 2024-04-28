@@ -64,10 +64,10 @@
             <div class="mt-8">
                 <p class="mb-2 block uppercase text-gray-500 font-bold text-center">You can also sign in using: </p>
                 <div class="flex flex-col gap-2 sm:flex-row sm:justify-around">
-                    <a href="{{route('facebook.auth.redirect')}}" class="border border-black p-2 uppercase hover:text-black font-bold text-gray-500 text-center rounded-lg w-full flex items-center justify-center">
+                    <a href="{{route('provider.auth.redirect', 'facebook')}}" class="border border-black p-2 uppercase hover:text-black font-bold text-gray-500 text-center rounded-lg w-full flex items-center justify-center">
                         <img class="w-8 h-8" src="{{asset('img/authLogos/logoFacebook.png')}}" alt="logo Facebook"> Facebook
                     </a>
-                    <a href="#" class=" border border-black p-2 uppercase hover:text-black font-bold text-gray-500 text-center rounded-lg w-full flex items-center justify-center">
+                    <a href="{{route('provider.auth.redirect', 'google')}}" class=" border border-black p-2 uppercase hover:text-black font-bold text-gray-500 text-center rounded-lg w-full flex items-center justify-center">
                         <img class="w-8 h-8" src="{{asset('img/authLogos/logoGoogle.png')}}" alt="logo Google"> Google
                     </a>
                 </div>

@@ -110,6 +110,59 @@
             </div>
         </div>     
     </div>
+
+    <livewire:seller-products :publication="$publication">
+
+    <div class="md:flex md:gap-6 mb-10 md:mx-4 md:justify-around">
+        <div class="md:w-1/2 p-5 bg-gray-100 rounded-lg flex flex-col items-center md:shadow-lg mb-20 md:mb-0">
+            <div class="p-5 bg-sky-200 rounded-full mt-[-4rem] shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                <path d="M3 9l4 0" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl">Delivery</h3>
+            <p class="mt-2 text-justify">
+                This shipping policy will detail how Awesome components will deliver 
+                the products to its customers and the conditions that the process entails. 
+                The company has an order transportation agreement with all sellers linked 
+                to our website. Awesome components receives the product and takes care of 
+                the entire packaging and delivery process. Shipments generally take between
+                twenty-four and forty-eight hours to reach their destination if it is a 
+                domestic delivery and between one and two weeks if it is an international 
+                delivery. Shipping has a cost equivalent to 5% of the value of the product.
+                The company is not responsible for the product if the customer requests 
+                that it be delivered to an address other than that specified in their personal 
+                profile.
+            </p>
+        </div>
+
+        <div class="md:w-1/2 p-5 bg-gray-100 rounded-lg flex flex-col items-center md:shadow-lg">
+            <div class="p-5 bg-sky-200 rounded-full mt-[-4rem] shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-checklist" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8" />
+                    <path d="M14 19l2 2l4 -4" />
+                    <path d="M9 8h4" />
+                    <path d="M9 12h2" />
+                </svg>
+            </div>
+            <h3 class="font-bold text-2xl">Return policy</h3>
+            <p class="mt-2 text-justify">
+                You can return any new product you have purchased from Awesome components, if you receive
+                it broken or with visible damage. You will receive a full refund within 30 days of purchase. 
+                At Awesome components we reserve the right to verify product returns and impose a fee equal 
+                to 20% of the sales price on the customer if the customer misunderstands the condition of 
+                the product. Any returned item found to be damaged by customer misuse, missing all parts, or
+                in unacceptable condition will result in a replacement charge to the customer based on the 
+                condition of the product. No returns will be accepted on any product after 30 days of receipt
+                of shipment.
+            </p>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')

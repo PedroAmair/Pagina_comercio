@@ -12,6 +12,7 @@ use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\DataDeletionController;
+use App\Http\Controllers\SellerPublications;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +37,12 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/{provider}/auth/redirect', [AuthController::class, 'redirect'])->name('provider.auth.redirect');
 Route::get('/{provider}/auth/callback', [AuthController::class, 'callback'])->name('provider.auth.callback');
 
-//Personal space and profile
+//Personal space and user profile
 Route::get('/personal/{user:username}', [PersonalController::class, 'index'])->name('personal');
 Route::patch('/personal/{user:username}', [PersonalController::class, 'update'])->name('personal.update');
+
+//Seller publications customer view
+Route::get('/publications/{user:username}/{publication:user_id}', SellerPublications::class)->name('seller.publications');
 
 //Publications
 Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');

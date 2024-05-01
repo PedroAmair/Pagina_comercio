@@ -23,7 +23,7 @@
             @endforeach
         </div>
 
-        <div class="mt-5 mx-auto">
+        <div class="my-5 sm:mx-5 md:mx-9 lg:mx-5 xl:mx-9">
             {{$results->links()}}
         </div>
     @else

@@ -48,9 +48,9 @@
                     </div>
                 </div>
             @endforeach
-        </div>
-        <div class="mt-5 mx-auto">
-            {{$publications->links()}}
+            <div class="my-5">
+                {{$publications->links()}}
+            </div>
         </div>
     @else
         <div class="flex flex-col items-center">

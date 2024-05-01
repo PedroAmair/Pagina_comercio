@@ -41,9 +41,6 @@ Route::get('/{provider}/auth/callback', [AuthController::class, 'callback'])->na
 Route::get('/personal/{user:username}', [PersonalController::class, 'index'])->name('personal');
 Route::patch('/personal/{user:username}', [PersonalController::class, 'update'])->name('personal.update');
 
-//Seller publications customer view
-Route::get('/publications/{user:username}/{publication:user_id}', SellerPublications::class)->name('seller.publications');
-
 //Publications
 Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');
 Route::get('/publications/create', [PublicationController::class, 'create'])->name('publications.create');
@@ -51,6 +48,9 @@ Route::post('/publications', [PublicationController::class, 'store'])->name('pub
 Route::get('/publications/{publication}/edit', [PublicationController::class, 'edit'])->name('publications.edit');
 Route::patch('/publications/{publication}', [PublicationController::class, 'update'])->name('publications.update');
 Route::delete('/publications/{publication}', [PublicationController::class, 'destroy'])->name('publications.destroy');
+
+//Seller publications customer view
+Route::get('/publications/{user:username}/{publication:user_id}', SellerPublications::class)->name('seller.publications');
 
 //Images
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');

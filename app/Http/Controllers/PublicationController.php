@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Crypt;
 
 class PublicationController extends Controller
 {
@@ -62,9 +63,10 @@ class PublicationController extends Controller
         return redirect()->route('publications.index')->with('success', 'success');
     }
 
-    public function edit(Publication $publication)
+    public function edit($id)
     {
-        $bdData = Publication::find($publication->id);
+        $id = Crypt::decrypt($id);
+        $bdData = Publication::find($id);
 
         return view('admin.publications-edit', [
             'bdData' => $bdData

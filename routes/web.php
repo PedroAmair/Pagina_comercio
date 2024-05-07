@@ -57,7 +57,7 @@ Route::get('/publications/{user:username}/{publication:user_id}', SellerPublicat
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
 
 //Customer search
-Route::get('/searchs/{searchtype}/{data}/', [SearchController::class, 'index'])->name('searchs.index');
+Route::get('/searchs/{searchtype}/{data}', [SearchController::class, 'index'])->name('searchs.index');
 Route::get('/searchs/{publication}', [SearchController::class, 'show'])->name('searchs.show');
 
 //Shopping cart

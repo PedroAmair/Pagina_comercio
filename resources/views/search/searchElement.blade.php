@@ -47,13 +47,18 @@
                         How many units do you want? :
                     </div>
                     <div>
-                        <form action="" id="quantityForm">
-                            <select name="buyUnits" id="buyUnits">
-                                <option value="{{ old('buyUnits') }}" selected>{{ old('buyUnits') ? old('buyUnits') : 'Choose' }}</option>
+                        <form action="{{route('cart.store', $publication->id)}}" method="POST" id="quantityForm">
+                            @csrf
+                            <select name="quantityUnits" id="buyUnits" class="@error('quantityUnits') border-red-500 @enderror">
+                                <option value="{{ old('quantityUnits') }}" selected>{{ old('quantityUnits') ? old('quantityUnits') : 'Choose' }}</option>
                                 <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option class="{{$publication->quantity < 2 ? 'hidden' : ''}}" value="2">2</option>
+                                <option class="{{$publication->quantity < 3 ? 'hidden' : ''}}" value="3">3</option>
                             </select>
+
+                            @error('quantityUnits')
+                                <p class="text-red-500 my-2 text-sm font-bold">{{ $message }}</p>
+                            @enderror
                         </form>
                     </div>
                 </div>
@@ -66,18 +71,22 @@
                         </span>
                     </p>
                 </div>
-                <div class="flex gap-2 mx-5">
+                <div class="grid grid-cols-2 gap-4 mx-4">
                     <input 
                         type="submit"
                         value="Purchase now"
                         form="quantityForm"
                         class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                        uppercase font-bold w-4/5 p-3 text-white rounded-lg my-5"
+                        uppercase font-bold w-full p-3 text-white rounded-lg my-5"
                     />
-                    <button class="bg-sky-800 hover:bg-sky-900 transition-colors cursor-pointer
-                                    uppercase font-bold w-4/5 p-3 text-white rounded-lg my-5">
+                    
+                    <button type="submit" form="quantityForm" class="bg-sky-800 hover:bg-sky-900 transition-colors cursor-pointer
+                                uppercase font-bold w-full p-3 text-white rounded-lg my-5">
                         add to cart
                     </button>
+                    @if(session('success'))
+                        <div id="addedToCartDiv" class="col-span-2 border-x-4 border-green-600 rounded-lg mb-4 text-xl block uppercase font-bold text-center text-green-600 bg-green-300">{{session('success')}}</div>
+                    @endif
                 </div>
             </div>
 
@@ -167,4 +176,5 @@
 
 @section('scripts')
     @vite('resources/js/imagesSelector.js')
+    @vite('resources/js/addedToCartAlert.js')
 @endsection

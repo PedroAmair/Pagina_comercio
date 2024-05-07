@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
@@ -58,6 +59,12 @@ Route::post('/images', [ImageController::class, 'store'])->name('images.store');
 //Customer search
 Route::get('/searchs/{searchtype}/{data}/', [SearchController::class, 'index'])->name('searchs.index');
 Route::get('/searchs/{publication}', [SearchController::class, 'show'])->name('searchs.show');
+
+//Shopping cart
+route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+route::post('/searchs/{publication}', [CartController::class, 'store'])->name('cart.store');
+route::delete('/cart/deleteItem/{rowId}', [CartController::class, 'destroy'])->name('cart.destroy');
+route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 //Legal section
 Route::get('/legal/privacypolicy', PrivacyController::class)->name('privacyPolicy');

@@ -24,7 +24,7 @@
                 @foreach (Cart::content() as $publication)    
                 <tr>
                     <td class="m-auto"><a href="{{route('searchs.show', $publication->id)}}"><img class="w-24 p-2" src="{{asset('uploads').'/'.$publication->options->image[0]}}" alt="{{$publication->product}} "></a></td>
-                    <td class="text-center text-sm md:text-lg w-48 md:w-32 xl:w-auto">{{$publication->name}}</td>
+                    <td class="text-center text-sm md:text-lg w-40 md:w-32 xl:w-auto">{{$publication->name}}</td>
                     <td class="text-center text-sm md:text-lg w-4 xs:w-auto">{{$publication->qty}}</td>
                     <td class="text-center text-sm md:text-lg">{{number_format($publication->price, 2)}} $</td>
                     <td class="text-center text-sm md:text-lg">{{number_format($publication->qty*$publication->price, 2)}} $</td>

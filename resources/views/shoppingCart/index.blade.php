@@ -24,11 +24,11 @@
                 @foreach (Cart::content() as $publication)    
                 <tr>
                     <td class="m-auto"><a href="{{route('searchs.show', $publication->id)}}"><img class="w-24 p-2" src="{{asset('uploads').'/'.$publication->options->image[0]}}" alt="{{$publication->product}} "></a></td>
-                    <td class="text-center text-sm md:text-lg w-40 md:w-32 xl:w-auto">{{$publication->name}}</td>
-                    <td class="text-center text-sm md:text-lg w-4 xs:w-auto">{{$publication->qty}}</td>
-                    <td class="text-center text-sm md:text-lg">{{number_format($publication->price, 2)}} $</td>
-                    <td class="text-center text-sm md:text-lg">{{number_format($publication->qty*$publication->price, 2)}} $</td>
-                    <td class="w-20 xs:w-12 m-auto">
+                    <td class="text-center text-xs ms:text-sm md:text-lg w-40 md:w-32 xl:w-auto">{{$publication->name}}</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg w-4 xs:w-auto">{{$publication->qty}}</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg">{{number_format($publication->price, 2)}} $</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg">{{number_format($publication->qty*$publication->price, 2)}} $</td>
+                    <td class=" w-12 md:m-auto">
                         <form action="{{route('cart.destroy', Crypt::encrypt($publication->rowId))}}" method="POST">
                             @csrf
                             @method('DELETE')
@@ -39,18 +39,18 @@
                 @endforeach
                 <tr class="border-t-2">
                     <td colspan="3"></td>
-                    <td class="text-center text-sm md:text-lg font-bold">Subtotal:</td>
-                    <td class="text-center text-sm md:text-lg">{{Cart::subtotal()}} $</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg font-bold">Subtotal:</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg">{{Cart::subtotal()}} $</td>
                 </tr>
                 <tr>
                     <td colspan="3"></td>
-                    <td class="text-center text-sm md:text-lg font-bold">Tax:</td>
-                    <td class="text-center text-sm md:text-lg">{{Cart::tax()}} $</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg font-bold">Tax:</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg">{{Cart::tax()}} $</td>
                 </tr>
                 <tr>
                     <td colspan="3"></td>
-                    <td class="text-center text-sm md:text-lg border-t-2 font-bold">Total:</td>
-                    <td class="text-center text-sm md:text-lg border-t-2 font-semibold">{{Cart::total()}} $</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg border-t-2 font-bold">Total:</td>
+                    <td class="text-center text-xs ms:text-sm md:text-lg border-t-2 font-semibold">{{Cart::total()}} $</td>
                 </tr>
                 </tbody>
             </table>

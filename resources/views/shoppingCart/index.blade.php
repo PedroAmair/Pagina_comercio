@@ -8,63 +8,74 @@
 
 @section('content')
     @if(Cart::count())
-        <div class="pt-10">
-            <table class="table-auto w-full xs:w-5/6 mx-auto">
-                <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Unit price</th>
-                    <th>Amount</th>
-                </tr>
-                </thead>
-                <tbody>
-                    
-                @foreach (Cart::content() as $publication)    
-                <tr>
-                    <td class="m-auto"><a href="{{route('searchs.show', $publication->id)}}"><img class="w-24 p-2" src="{{asset('uploads').'/'.$publication->options->image[0]}}" alt="{{$publication->product}} "></a></td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg w-40 md:w-32 xl:w-auto">{{$publication->name}}</td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg w-4 xs:w-auto">{{$publication->qty}}</td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg">{{number_format($publication->price, 2)}} $</td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg">{{number_format($publication->qty*$publication->price, 2)}} $</td>
-                    <td class=" w-12 md:m-auto">
+        <div class="w-5/6 mx-auto md:mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-6">
+                <div class="hidden md:block justify-self-center col-span-2 font-bold text-xl">Product</div>
+                <div class="hidden md:block justify-self-center font-bold text-xl">Quantity</div>
+                <div class="hidden md:block justify-self-center font-bold text-xl">Unit price</div>
+                <div class="hidden md:block justify-self-center font-bold text-xl">Amount</div>
+                <div class="hidden md:block justify-self-center font-bold text-xl">Delete</div>
+            </div>
+            
+            @foreach (Cart::content() as $publication)
+                <div class="grid grid-cols-1 my-5 md:my-0 py-3 md:py-0 md:grid-cols-6 border-2 md:border-0">
+                    <div class="md:col-span-2">
+                        <a class="flex flex-col md:flex-row items-center justify-start gap-2" href="{{route('searchs.show', $publication->id)}}">
+                            <img class="w-1/2 md:w-1/6" src="{{asset('uploads').'/'.$publication->options->image[0]}}" alt="{{$publication->product}} ">
+                            <p class="text-3xl text-center md:text-left md:text-lg font-bold md:font-normal">{{ucfirst($publication->name)}}</p>
+                        </a>
+                    </div>
+
+                    <div class="justify-self-center self-center text-xl md:text-lg"><span class="md:hidden text-xl">Quantity: </span>{{$publication->qty}} @choice('unit|units', $publication->qty)</div>
+                    <div class="justify-self-center self-center text-xl md:text-lg"><span class="md:hidden text-xl">Unit price: </span>{{number_format($publication->price, 2)}} $</div>
+                    <div class="justify-self-center self-center text-xl md:text-lg"><span class="md:hidden text-xl">Amount: </span>{{number_format($publication->qty*$publication->price, 2)}} $</div>
+                    <div class="justify-self-center self-center mt-5 md:mt-0">
                         <form action="{{route('cart.destroy', Crypt::encrypt($publication->rowId))}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input id="delete" type="submit" class="w-full p-[.1rem] font-bold bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer" value="X">
+                            <input id="delete" type="submit" class="py-3 md:py-2 px-10 md:px-4 font-bold bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer" value="X">
                         </form>
-                    </td>
-                </tr>
-                @endforeach
-                <tr class="border-t-2">
-                    <td colspan="3"></td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg font-bold">Subtotal:</td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg">{{Cart::subtotal()}} $</td>
-                </tr>
-                <tr>
-                    <td colspan="3"></td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg font-bold">Tax:</td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg">{{Cart::tax()}} $</td>
-                </tr>
-                <tr>
-                    <td colspan="3"></td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg border-t-2 font-bold">Total:</td>
-                    <td class="text-center text-xs ms:text-sm md:text-lg border-t-2 font-semibold">{{Cart::total()}} $</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+                    </div>
+                </div>
+            @endforeach
+        
 
-        <div class="my-20 flex justify-around">
-            <div>
-                <a class="p-3 font-bold bg-red-600 text-white rounded-lg hover:bg-red-700" href="{{route('cart.clear')}}">Clear cart</a>
+            <div class="grid grid-cols-2 gap-3 md:gap-0 md:grid-cols-6 border-2 md:border-0 md:border-t-2">
+                <div class="col-start-1 md:col-start-4 justify-self-end">
+                    <div class="font-bold text-2xl md:text-xl">Subtotal:</div>
+                </div>
+
+                <div class="col-start-2 md:col-start-5 justify-self-start md:justify-self-center">
+                    <div class="text-2xl md:text-lg">{{Cart::subtotal()}} $</div>
+                </div>
+
+                <div class="col-start-1 md:col-start-4 justify-self-end">
+                    <div class="font-bold text-2xl md:text-xl">Tax:</div>
+                </div>
+
+                <div class="col-start-2 md:col-start-5 justify-self-start md:justify-self-center">
+                    <div class="text-2xl md:text-lg">{{Cart::tax()}} $</div>
+                </div>
+
+                <div class="col-start-1 md:col-start-4 justify-self-end">
+                    <div class="font-bold text-2xl md:text-xl">Total:</div>
+                </div>
+
+                <div class="col-start-2 md:col-start-5 justify-self-start md:justify-self-center md:border-t-2">
+                    <div class="font-semibold text-2xl md:text-lg">{{Cart::total()}} $</div>
+                </div>
             </div>
 
-            <div>
-                <a class="py-3 px-4 font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="">Proceed</a>
+            <div class="my-20 flex flex-col-reverse md:flex-row md:justify-between gap-6">
+                <div>
+                    <a class="block text-center md:inline p-3 uppercase font-bold bg-red-600 text-white rounded-lg hover:bg-red-700" href="{{route('cart.clear')}}">Clear cart</a>
+                </div>
+    
+                <div>
+                    <a class="block text-center md:inline py-3 px-6 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="">Proceed</a>
+                </div>
             </div>
-        </div>
+        </div>       
     @else
         <p class="mt-[5%] uppercase text-4xl text-gray-200 text-center m-auto">No items added yet</p>
     @endif

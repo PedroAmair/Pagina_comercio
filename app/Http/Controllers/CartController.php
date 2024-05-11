@@ -22,10 +22,11 @@ class CartController extends Controller
         ]);
 
         $publication->image = explode(",", $publication->image);
+        $publicationBrandAndProoduct = $publication->brand.' '.$publication->product;
 
         Cart::add(
             $publication->id,
-            $publication->product,
+            $publicationBrandAndProoduct,
             $request->quantityUnits,
             $publication->price,
             ["image" => $publication->image]

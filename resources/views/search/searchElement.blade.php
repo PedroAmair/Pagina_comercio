@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(session('success'))
+    <div id="addedToCartDiv" class="col-span-2 border-x-4 border-green-600 mb-4 text-xl block uppercase font-bold text-center text-green-600 bg-green-300">{{session('success')}}</div>
+    @endif
     <div class="md:flex md:m-4 flex flex-col md:flex-row">
         <div class="w-full md:w-2/3">
             <div class="grid gap-4 justify-items-center">
@@ -84,9 +87,6 @@
                                 uppercase font-bold w-full p-3 text-white rounded-lg my-5">
                         add to cart
                     </button>
-                    @if(session('success'))
-                        <div id="addedToCartDiv" class="col-span-2 border-x-4 border-green-600 rounded-lg mb-4 text-xl block uppercase font-bold text-center text-green-600 bg-green-300">{{session('success')}}</div>
-                    @endif
                 </div>
             </div>
 

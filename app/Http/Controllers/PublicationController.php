@@ -86,17 +86,15 @@ class PublicationController extends Controller
             'image' => 'required'
         ]);
 
-        $actualPublication = Publication::find($publication->id);
-
-        $actualPublication->product = $request->product;
-        $actualPublication->brand = $request->brand;
-        $actualPublication->category = $request->category;
-        $actualPublication->quantity = $request->quantity;
-        $actualPublication->price = $request->price;
-        $actualPublication->condition = $request->condition;
-        $actualPublication->description = $request->description;
-        $actualPublication->image = implode(",", $request->image);
-        $actualPublication->save();
+        $publication->product = $request->product;
+        $publication->brand = $request->brand;
+        $publication->category = $request->category;
+        $publication->quantity = $request->quantity;
+        $publication->price = $request->price;
+        $publication->condition = $request->condition;
+        $publication->description = $request->description;
+        $publication->image = implode(",", $request->image);
+        $publication->save();
 
         return redirect()->route('publications.index')->with('success', 'success');
     }

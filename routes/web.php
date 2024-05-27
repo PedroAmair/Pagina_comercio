@@ -13,6 +13,7 @@ use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\DataDeletionController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SellerPublications;
 
 /*
@@ -65,6 +66,12 @@ route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 route::post('/searchs/{publication}', [CartController::class, 'store'])->name('cart.store');
 route::delete('/cart/deleteItem/{rowId}', [CartController::class, 'destroy'])->name('cart.destroy');
 route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+
+//Pyment section
+route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+route::post('/payment/paypal', [PaymentController::class, 'paypal'])->name('paypal');
+route::get('/payment/paypal/success', [PaymentController::class, 'success'])->name('paypal.success');
+route::get('/payment/paypal/cancel', [PaymentController::class, 'cancel'])->name('paypal.cancel');
 
 //Legal section
 Route::get('/legal/privacypolicy', PrivacyController::class)->name('privacyPolicy');

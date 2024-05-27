@@ -72,7 +72,7 @@
                 </div>
     
                 <div>
-                    <a class="block text-center md:inline py-3 px-6 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="">Proceed</a>
+                    <a class="block text-center md:inline py-3 px-6 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="{{route('payment.index')}}">Proceed</a>
                 </div>
             </div>
         </div>       

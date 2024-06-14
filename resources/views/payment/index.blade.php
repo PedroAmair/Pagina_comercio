@@ -31,4 +31,7 @@
             </div>
         </div>
     </div>
+    <div class="mx-4 my-8">
+        <a class="uppercase text-white  p-5  bg-sky-600 hover:bg-sky-700 rounded-lg" href="{{route('cart.index')}}">Back to cart</a>
+    </div>
 @endsection

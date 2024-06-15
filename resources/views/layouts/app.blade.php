@@ -92,13 +92,13 @@
         @yield('scripts')
         
         <footer class="p-5 bg-black flex flex-col items-center mt-auto">
-            <div class="flex gap-5">
-                <a class="text-white underline hover:text-zinc-500" href="{{route('privacyPolicy')}}">Privacy policy</a>
-                <a class="text-white underline hover:text-zinc-500" href="{{route('dataDeletionFacebook')}}">Instructions for data deletion</a>
+            <div class="flex gap-3 xs:gap-5">
+                <a class="text-white underline text-center hover:text-zinc-500" href="{{route('privacyPolicy')}}">Privacy policy</a>
+                <a class="text-white underline text-center hover:text-zinc-500" href="{{route('dataDeletionFacebook')}}">Instructions for data deletion</a>
             </div>
 
             <div>
-                <div class="text-1xl text-white font-black">Pedro Amair - All rights reserved &#9400 {{ date('Y') }}</div>
+                <div class="text-1xl text-center text-white font-black">Pedro Amair - All rights reserved &#9400 {{ date('Y') }}</div>
             </div>
         </footer>
         @livewireScripts

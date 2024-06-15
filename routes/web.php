@@ -58,7 +58,7 @@ Route::get('/publications/{user:username}/{publication:user_id}', SellerPublicat
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
 
 //Customer search
-Route::get('/searchs/{searchtype}/{data}', [SearchController::class, 'index'])->name('searchs.index');
+Route::get('/searchs/{searchType}/{data}', [SearchController::class, 'index'])->name('searchs.index');
 Route::get('/searchs/{publication}', [SearchController::class, 'show'])->name('searchs.show');
 
 //Shopping cart
@@ -69,6 +69,7 @@ route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 //Pyment section
 route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+route::post('payment/{paymentType}', [PaymentController::class, 'store'])->name('payment.store');
 route::post('/payment/paypal', [PaymentController::class, 'paypal'])->name('paypal');
 route::get('/payment/paypal/success', [PaymentController::class, 'success'])->name('success');
 route::get('/payment/paypal/cancel', [PaymentController::class, 'cancel'])->name('cancel');

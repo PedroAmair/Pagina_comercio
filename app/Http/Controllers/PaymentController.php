@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
@@ -17,6 +18,29 @@ class PaymentController extends Controller
     public function index()
     {
         return view('payment.index');
+    }
+
+    public function store(Request $request, $paymentType)
+    {
+        $this->validate($request, [
+            'bank' => 'required',
+            'paymentNumber' => 'required',
+            'date' => 'required|date',
+            'voucher' => 'required|mimes:pdf,jpg,jpeg'
+        ]);
+
+        $voucher = $request->file('voucher');
+        $voucherPath = $voucher->store('public/vouchers');
+        $voucherName = str_replace('public/vouchers/', '', $voucherPath);
+
+        $request->user()->payments()->create([
+            'type' => $paymentType,
+            'origin' => $request->bank,
+            'reference' => $request->paymentNumber,
+            'date' => $request->date,
+            'voucher' =>$voucherName,
+            'user_id' => auth()->user()->id
+        ]);
     }
 
     public function paypal()

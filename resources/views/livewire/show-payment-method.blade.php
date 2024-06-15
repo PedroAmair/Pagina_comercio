@@ -12,7 +12,8 @@
                 </div>
             </div>
             <div>
-                <form action="">
+                <form action="{{route('payment.store', 'cellphone')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <fieldset class="border border-solid border-gray-300 p-3">
                         <legend class="font-bold text-xl uppercase my-2">Your payment information</legend>
 
@@ -30,9 +31,9 @@
                         <div class="flex flex-col xl:flex-row mb-2">
                             <label class="grow-0 md:p-2 text-lg" for="paymentNumber">Payment number: </label>
                             <input 
-                                id="bank"
+                                id="paymentNumber"
                                 class="grow"
-                                name="bank" 
+                                name="paymentNumber" 
                                 type="number"
                                 placeholder="Confirmation number"
                             >
@@ -54,6 +55,7 @@
                                 id="voucher" 
                                 name="voucher" 
                                 type="file"
+                                accept=".pdf,.jpg,.jpeg"
                             >
                         </div>
                     </fieldset>
@@ -83,7 +85,8 @@
                 </div>
             </div>
             <div>
-                <form action="">
+                <form action="{{route('payment.store', 'Bank')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <fieldset class="border border-solid border-gray-300 p-3">
                         <legend class="font-bold text-xl uppercase my-2">Your payment information</legend>
 
@@ -101,9 +104,9 @@
                         <div class="flex flex-col xl:flex-row mb-2">
                             <label class="grow-0 md:p-2 text-lg" for="paymentNumber">Payment number: </label>
                             <input 
-                                id="bank"
+                                id="paymentNumber"
                                 class="grow"
-                                name="bank" 
+                                name="paymentNumber" 
                                 type="number"
                                 placeholder="Confirmation number"
                             >
@@ -125,6 +128,7 @@
                                 id="voucher" 
                                 name="voucher" 
                                 type="file"
+                                accept=".pdf,.jpg,.jpeg"
                             >
                         </div>
                     </fieldset>

@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
+use App\Models\Publication;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Models\PaymentPublications;
+use Illuminate\Support\Facades\Crypt;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
@@ -39,7 +44,60 @@ class PaymentController extends Controller
             'reference' => $request->paymentNumber,
             'date' => $request->date,
             'voucher' =>$voucherName,
+            'total' => Cart::total(),
             'user_id' => auth()->user()->id
+        ]);
+
+        $paymentId = Payment::Select('id')->latest()->first();
+        $orderCode = Str::uuid();
+
+        $payment_publications = [];
+
+        foreach(Cart::content() as $element) {
+            $payment_publications[] = [
+                'payment_id' => $paymentId->id,
+                'publication_id' => $element->id,
+                'quantity' => $element->qty,
+                'order_code' => $orderCode,
+                'status' => 0,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ];
+
+            $quantityDB = Publication::find($element->id);
+            $quantityDelete = ($quantityDB->quantity - $element->qty);
+            $quantityDB->quantity = $quantityDelete;
+            $quantityDB->save();
+            
+        }
+
+        PaymentPublications::insert($payment_publications);
+
+        Cart::destroy();
+
+        return redirect()->route('payment.confirmation', Crypt::encrypt($paymentId->id));
+        
+    }
+
+    public function confirmation($payment)
+    {
+        $userPayment = Crypt::decrypt($payment);
+
+        $purchasedProducts = Payment::with('publications')->where('id', $userPayment)->get();
+
+        foreach($purchasedProducts[0]->publications as $item) {
+            $item->image = explode(",", $item->image);
+        }
+
+        $products = Publication::all()->shuffle()->take(6);
+
+        foreach($products as $product) {
+            $product->image = explode(",", $product->image);
+        }
+
+        return view('payment.confirmation', [
+            'purchasedProducts' => $purchasedProducts,
+            'products' => $products
         ]);
     }
 

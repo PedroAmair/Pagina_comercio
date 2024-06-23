@@ -69,10 +69,11 @@ route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 //Pyment section
 route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-route::post('payment/{paymentType}', [PaymentController::class, 'store'])->name('payment.store');
 route::post('/payment/paypal', [PaymentController::class, 'paypal'])->name('paypal');
 route::get('/payment/paypal/success', [PaymentController::class, 'success'])->name('success');
 route::get('/payment/paypal/cancel', [PaymentController::class, 'cancel'])->name('cancel');
+route::get('/payment/confirmation/{payment}', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
+route::post('payment/{paymentType}', [PaymentController::class, 'store'])->name('payment.store');
 
 //Legal section
 Route::get('/legal/privacypolicy', PrivacyController::class)->name('privacyPolicy');

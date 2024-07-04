@@ -54,6 +54,11 @@
     "isEntry": true,
     "src": "resources/js/imagesSelector.js"
   },
+  "resources/js/outOfStockAlert.js": {
+    "file": "assets/outOfStockAlert-1cf41084.js",
+    "isEntry": true,
+    "src": "resources/js/outOfStockAlert.js"
+  },
   "resources/js/personalButtons.js": {
     "file": "assets/personalButtons-efa19d9b.js",
     "isEntry": true,

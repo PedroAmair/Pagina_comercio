@@ -7,6 +7,10 @@
 @endsection
 
 @section('content')
+    @if(isset($notAvaliable) === 1)
+        <div id="outOfStock" class="bg-amber-400"><p class="font-bold text-center uppercase text-xl text-amber-700 border-amber-600 border-x-4">We remove one or more out-of-stock/inactive products from your cart</p></div>
+    @endif
+
     @if(Cart::count())
         <div class="w-5/6 mx-auto md:mt-20">
             <div class="grid grid-cols-1 md:grid-cols-6">
@@ -23,6 +27,13 @@
                         <a class="flex flex-col md:flex-row items-center justify-start gap-2" href="{{route('searchs.show', $publication->id)}}">
                             <img class="w-1/2 md:w-1/6" src="{{asset('uploads').'/'.$publication->options->image[0]}}" alt="{{$publication->product}} ">
                             <p class="text-3xl text-center md:text-left md:text-lg font-bold md:font-normal">{{ucfirst($publication->name)}}</p>
+                            @if(session('elements'))
+                                @foreach(session('elements') as $item)
+                                    @if($publication->rowId === $item['id'])
+                                        <p class="bg-red-400 rounded-lg p-1 text-red-800 text-sm font-bold text-center">Only {{$item['quantity']}} left</p>
+                                    @endif
+                                @endforeach
+                            @endif
                         </a>
                     </div>
 
@@ -72,7 +83,7 @@
                 </div>
     
                 <div>
-                    <a class="block text-center md:inline py-3 px-6 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="{{route('payment.index')}}">Proceed</a>
+                    <a class="block text-center md:inline py-3 px-6 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="{{route('cart.quantity.verify')}}">Proceed</a>
                 </div>
             </div>
         </div>       
@@ -84,5 +95,8 @@
 @section('scripts')
     @if(session('delete'))
         @vite('resources/js/deleteDone.js')
+    @endif
+    @if(isset($notAvaliable) === 1)
+        @vite('resources/js/outOfStockAlert.js')
     @endif
 @endsection

@@ -63,6 +63,7 @@ Route::get('/searchs/{publication}', [SearchController::class, 'show'])->name('s
 
 //Shopping cart
 route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+route::get('/cart/verify', [CartController::class, 'NEQ'])->name('cart.quantity.verify');
 route::post('/searchs/{publication}', [CartController::class, 'store'])->name('cart.store');
 route::delete('/cart/deleteItem/{rowId}', [CartController::class, 'destroy'])->name('cart.destroy');
 route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');

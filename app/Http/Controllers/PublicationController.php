@@ -14,15 +14,20 @@ class PublicationController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Publication $publication)
+    public function index()
     {
         $publications = Publication::select('id','product', 'condition', 'status', 'quantity', 'category', 'price', 'user_id', 'image', 'brand')->where('user_id', auth()->user()->id)->latest()->paginate(10);
 
         foreach($publications as $publication) {
-            $publication->image = explode(",", $publication->image);
+            if($publication->quantity === 0) {
+                $publication->status = 0;
+                $publication->save();
+            }
         }
 
-        
+        foreach($publications as $publication) {
+            $publication->image = explode(",", $publication->image);
+        }
 
         return view('admin.publications-index', [
             'publications' => $publications

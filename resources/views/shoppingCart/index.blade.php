@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    @if(isset($notAvaliable) === 1)
+    @if (isset($notAvaliable) && $notAvaliable === 1)
         <div id="outOfStock" class="bg-amber-400"><p class="font-bold text-center uppercase text-xl text-amber-700 border-amber-600 border-x-4">We remove one or more out-of-stock/inactive products from your cart</p></div>
     @endif
 
@@ -96,7 +96,7 @@
     @if(session('delete'))
         @vite('resources/js/deleteDone.js')
     @endif
-    @if(isset($notAvaliable) === 1)
+    @if(isset($notAvaliable) && $notAvaliable === 1)
         @vite('resources/js/outOfStockAlert.js')
     @endif
 @endsection

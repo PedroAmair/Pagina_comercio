@@ -30,7 +30,7 @@
                             @if(session('elements'))
                                 @foreach(session('elements') as $item)
                                     @if($publication->rowId === $item['id'])
-                                        <p class="bg-red-400 rounded-lg p-1 text-red-800 text-sm font-bold text-center">Only {{$item['quantity']}} left</p>
+                                        <div class=""><p class="bg-red-400 rounded-lg p-2 text-red-800 text-sm font-bold text-center">Only {{$item['quantity']}} left</p></div>
                                     @endif
                                 @endforeach
                             @endif

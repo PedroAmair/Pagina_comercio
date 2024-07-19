@@ -26,6 +26,6 @@ class Payment extends Model
 
     public function publications()
     {
-        return $this->belongsToMany(Publication::class, 'payment_publications')->withPivot('quantity', 'order_code', 'status');
+        return $this->belongsToMany(Publication::class, 'payment_publications')->withPivot('quantity', 'order_code', 'status', 'created_at');
     }
 }

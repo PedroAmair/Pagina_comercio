@@ -35,7 +35,7 @@
         <div class="w-full md:w-6/12">
             <h2 class="text-2xl font-bold text-center lg:text-left">My transactions</h2>
             <div class="border-2 border-solid border-gray-200 flex flex-col 2xl:flex-row justify-center items-center py-2 2xl:py-0">
-                <button class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2">My shopping</button>
+                <a href="{{route('shopping.index')}}" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2 text-center">My shopping</a>
                 <a href="{{route('publications.index')}}" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2 text-center">My publications</a>
                 <button class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2">My sells</address></button>
             </div>

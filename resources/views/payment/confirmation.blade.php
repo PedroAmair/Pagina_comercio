@@ -21,14 +21,14 @@
             <a 
                 class="block text-center bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                 uppercase font-bold w-full p-3 text-white rounded-lg my-5" 
-                href=""
+                href="{{route('shopping.index')}}"
             >
                 Go to my purchased products
             </a>
             <a 
                 class="block text-center bg-sky-800 hover:bg-sky-900 transition-colors cursor-pointer
                 uppercase font-bold w-full p-3 text-white rounded-lg my-5" 
-                href=""
+                href="{{route('personal', auth()->user()->username)}}"
             >
                 Go to my personal space
             </a>

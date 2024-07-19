@@ -8,13 +8,14 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SellerPublications;
+use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\DataDeletionController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\SellerPublications;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,9 @@ Route::get('/publications/{user:username}/{publication:user_id}', SellerPublicat
 
 //Images
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
+
+//Purchased products
+Route::get('/shopping', [ShoppingController::class, 'index'])->name('shopping.index');
 
 //Customer search
 Route::get('/searchs/{searchType}/{data}', [SearchController::class, 'index'])->name('searchs.index');

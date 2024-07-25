@@ -38,15 +38,27 @@ class PaymentController extends Controller
         $voucherPath = $voucher->store('public/vouchers');
         $voucherName = str_replace('public/vouchers/', '', $voucherPath);
 
-        $request->user()->payments()->create([
-            'type' => $paymentType,
-            'origin' => $request->bank,
-            'reference' => $request->paymentNumber,
-            'date' => $request->date,
-            'voucher' =>$voucherName,
-            'total' => Cart::total(),
-            'user_id' => auth()->user()->id
-        ]);
+        $payment = [];
+
+        foreach(Cart::content() as $data) {
+            $product_id = Publication::find($data->id); 
+            $seller_id = $product_id->user_id;
+
+            $payment[] = [
+                'type' => $paymentType,
+                'origin' => $request->bank,
+                'reference' => $request->paymentNumber,
+                'date' => $request->date,
+                'voucher' =>$voucherName,
+                'total' => Cart::total(),
+                'user_id' => auth()->user()->id,
+                'seller_id' => $seller_id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ];
+        }
+
+        Payment::insert($payment);
 
         $paymentId = Payment::Select('id')->latest()->first();
         $orderCode = Str::uuid();

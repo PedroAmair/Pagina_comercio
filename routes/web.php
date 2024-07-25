@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SellController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -60,6 +61,9 @@ Route::post('/images', [ImageController::class, 'store'])->name('images.store');
 
 //Purchased products
 Route::get('/shopping', [ShoppingController::class, 'index'])->name('shopping.index');
+
+//Selled products
+Route::get('/selled', [SellController::class, 'index'])->name('selled.index');
 
 //Customer search
 Route::get('/searchs/{searchType}/{data}', [SearchController::class, 'index'])->name('searchs.index');

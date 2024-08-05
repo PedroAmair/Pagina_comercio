@@ -95,7 +95,9 @@ class PaymentController extends Controller
     {
         $userPayment = Crypt::decrypt($payment);
 
-        $purchasedProducts = Payment::with('publications')->where('id', $userPayment)->get();
+        $purchasedProducts = Payment::with('publications')
+            ->where('id', $userPayment)
+            ->get();
 
         foreach($purchasedProducts[0]->publications as $item) {
             $item->image = explode(",", $item->image);

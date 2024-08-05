@@ -16,7 +16,10 @@ class PublicationController extends Controller
 
     public function index()
     {
-        $publications = Publication::select('id','product', 'condition', 'status', 'quantity', 'category', 'price', 'user_id', 'image', 'brand')->where('user_id', auth()->user()->id)->latest()->paginate(10);
+        $publications = Publication::select('id','product', 'condition', 'status', 'quantity', 'category', 'price', 'user_id', 'image', 'brand')
+            ->where('user_id', auth()->user()->id)
+            ->latest()
+            ->paginate(10);
 
         foreach($publications as $publication) {
             if($publication->quantity === 0) {

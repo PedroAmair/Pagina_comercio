@@ -10,8 +10,15 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $processors = Publication::where('category', 'processor')->limit(10)->latest()->get();
-        $discounts = Publication::where('price', '<', '200')->limit(15)->orderBy('price', 'asc')->get();
+        $processors = Publication::where('category', 'processor')
+            ->limit(10)
+            ->latest()
+            ->get();
+
+        $discounts = Publication::where('price', '<', '200')
+            ->limit(15)
+            ->orderBy('price', 'asc')
+            ->get();
 
         foreach($processors as $pro) {
             $pro->image = explode(",", $pro->image);

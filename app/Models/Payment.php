@@ -16,7 +16,8 @@ class Payment extends Model
         'date',
         'voucher',
         'total',
-        'user_id'
+        'user_id',
+        'seller_id'
     ];
 
     public function user()

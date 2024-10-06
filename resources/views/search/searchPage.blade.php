@@ -16,7 +16,7 @@
                     </a>
 
                     <div>
-                        <p class="text-center font-bold 2xl:text-xl">{{$result->brand === 'amd' || $result->brand === 'evga' || $result->brand === 'msi' || $result->brand === 'xfx' ? strtoupper($result->brand).' '.$result->product :  ucwords($result->brand).' '.$result->product}}</p>
+                        <p class="truncate text-center font-bold 2xl:text-xl">{{$result->brand === 'amd' || $result->brand === 'evga' || $result->brand === 'msi' || $result->brand === 'xfx' ? strtoupper($result->brand).' '.$result->product :  ucwords($result->brand).' '.$result->product}}</p>
                         <p class="text-center text-green-700 font-bold text-2xl">{{$result->price}} $</p>
                     </div>
                 </div>

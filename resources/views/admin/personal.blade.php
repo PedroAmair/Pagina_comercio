@@ -52,7 +52,7 @@
         <div class="m-5 bg-white lg:flex items-start">
             <div class="flex flex-col items-center mt-2">
                 <p class="font-bold mb-1">Avatar</p>
-                <img class="w-2/4 rounded-full" src="{{asset('uploads/profilePhotos').'/'.$user->image}}" alt="user image">
+                <img class="w-2/4 md:w-1/4 xl:w-2/4 rounded-full" src="{{asset('uploads/profilePhotos').'/'.$user->image}}" alt="user image">
             </div>
     
             <form action="{{ route('personal.update', auth()->user()->username) }}" method="POST" enctype="multipart/form-data" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">

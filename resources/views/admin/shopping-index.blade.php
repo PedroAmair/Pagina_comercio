@@ -60,7 +60,7 @@
                                     </div>
 
                                     <div>
-                                        <p class="text-xl font-bold text-red-700 text-center md:text-left">-{{$value[0]->total}} $</p>
+                                        <p class="text-xl font-bold text-red-700 text-center md:text-left">-{{number_format($value[0]->total, 2)}} $</p>
                                     </div>
                                 </ul>
                             </div>

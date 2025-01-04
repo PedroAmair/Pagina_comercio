@@ -27,4 +27,10 @@ class Publication extends Model
     {
         return $this->belongsTo(User::class)->select('username', 'image');
     }
+
+    public function payments()
+    {
+        return $this->belongsToMany(Payment::class, 'payment_publications')->withPivot('id', 'quantity', 'order_code', 'status', 'created_at');
+    }
+
 }

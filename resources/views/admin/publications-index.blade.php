@@ -58,7 +58,7 @@
                 <p class="mt-[10%] uppercase text-4xl text-gray-200">Nothing to show here!</p>
             </div>
             <div class="flex gap-2">
-                <p class="text-2xl">Make your first sale</p>
+                <p class="text-2xl">Publicate your first product</p>
                 <a href="{{route('publications.create')}}" class="text-2xl underline text-blue-600">
                     Now!
                 </a>

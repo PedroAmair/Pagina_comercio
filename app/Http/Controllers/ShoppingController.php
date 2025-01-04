@@ -24,9 +24,9 @@ class ShoppingController extends Controller
         //$allShops = $shops->unique('reference');
         
         $allShops = (new Collection($shops))->paginate(10);
-
+        
         return view('admin.shopping-index', [
-            'allShops' => $allShops,
+            'allShops' => $allShops
         ]);
     }
 

@@ -22,7 +22,12 @@ class Payment extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class)->select('fname', 'lname');
+        return $this->belongsTo(User::class)->select('fname', 'lname', 'username');
+    }
+
+    public function seller()
+    {
+        return $this->belongsTo(User::class, 'seller_id');
     }
 
     public function publications()

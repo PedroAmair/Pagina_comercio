@@ -64,6 +64,7 @@ Route::get('/shopping', [ShoppingController::class, 'index'])->name('shopping.in
 
 //Selled products
 Route::get('/selled', [SellController::class, 'index'])->name('selled.index');
+Route::post('seled/status/{status}', [SellController::class, 'changeStatus'])->name('selled.status');
 
 //Customer search
 Route::get('/searchs/{searchType}/{data}', [SearchController::class, 'index'])->name('searchs.index');

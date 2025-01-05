@@ -7,10 +7,10 @@ function initiate() {
 }
 
 function addedToCartAlert() {
-    const divCartAlert = document.querySelector('#addedToCartDiv');
+    const divCartAlert = document.querySelector('#alert-border-3');
     if(divCartAlert) {
         setTimeout(() => {
             divCartAlert.classList.add("hidden");
-        }, 2500)
+        }, 5000)
     }
 }

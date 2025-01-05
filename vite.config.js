@@ -14,6 +14,7 @@ export default defineConfig({
                     'resources/js/confirmationDeleteAlert.js',
                     'resources/js/deleteDone.js',
                     'resources/js/addedToCartAlert.js',
+                    'resources/js/cartEffect.js',
                     'resources/js/outOfStockAlert.js'],
             refresh: true,
         }),

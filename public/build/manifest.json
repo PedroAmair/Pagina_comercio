@@ -3,12 +3,12 @@
     "file": "assets/sweetalert2.all-2e02e51a.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-17d7f933.css",
+    "file": "assets/app-aa59f2dc.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/addedToCartAlert.js": {
-    "file": "assets/addedToCartAlert-e21bec09.js",
+    "file": "assets/addedToCartAlert-9b50ad77.js",
     "isEntry": true,
     "src": "resources/js/addedToCartAlert.js"
   },
@@ -19,6 +19,11 @@
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/cartEffect.js": {
+    "file": "assets/cartEffect-e21b0bc7.js",
+    "isEntry": true,
+    "src": "resources/js/cartEffect.js"
   },
   "resources/js/confirmationAlert.js": {
     "file": "assets/confirmationAlert-f0552f5c.js",

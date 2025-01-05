@@ -248,7 +248,7 @@
                 </a>
                 </form>
             </div>
-            
+
         </div>
     </div>
 
@@ -309,7 +309,7 @@
                 </div>
             </article>
 
-            <article class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+            <article class="max-w-sm bg-white border border-gray-200 rounded-lg shadow  xl:hidden 2xl:block">
                 <a href="#">
                     <img class="rounded-t-lg" src="{{ asset('img/news/14900k.webp') }}" alt="Core i9 14900k" />
                 </a>

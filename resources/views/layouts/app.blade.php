@@ -10,7 +10,7 @@
         @vite('resources/js/flowbiteFuncionalities.js')
     </head>
     <body class="antialiased max-w-[2600px] bg-gray-200 flex flex-col min-h-screen">
-        <header class="p-5 bg-black">
+        <header class="p-5 bg-black sticky top-0 z-50">
             <div class="md:flex justify-between items-center">
                 <div class="md:w-3/12 md:mr-3 lg:mr-0">
                     <a href="{{ route('home') }}">
@@ -58,13 +58,14 @@
                                         <a href="{{ route('login') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Login</a>
                                     </li>
                                 @endguest
-                                <li class="flex items-center"> 
+                                <li class="flex items-center relative"> 
                                     <a href="{{route('cart.index')}}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                                         </svg>   
                                     </a>
-                                    <span class="py-[.1rem] px-2 text-white bg-sky-800 rounded-lg {{Cart::count() >= 1 ? '' : 'hidden'}}">{{Cart::count()}}</span>
+                        
+                                    <span class="px-1 py-0 text-white bg-sky-800 rounded-sm {{Cart::count() >= 1 ? 'animate-[pulse_2s_ease-in-out]' : 'hidden'}}">{{Cart::count()}}</span>
                                 </li>    
                                 @auth
                                     <li>

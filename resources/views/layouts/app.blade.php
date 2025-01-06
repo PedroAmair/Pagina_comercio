@@ -37,56 +37,67 @@
                     </form>
                 </div>
 
-                <nav class="border-gray-200 bg-gray-50 md:bg-black rounded-lg">
-                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:p-0">
-                        <span class="self-center text-2xl font-semibold  md:hidden">Menu</span>
-                        <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 md:hidden" aria-controls="navbar-hamburger" aria-expanded="false">
-                            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                        </button>
-                        <div class="w-full hidden md:flex mt-2 md:mt-0" id="navbar-hamburger">
-                            <ul class="flex flex-col md:flex-row gap-2 md:gap-5 xl:gap-8 font-medium rounded-lg bg-gray-50 md:bg-black items-center">
-                                @auth
-                                    <li>
-                                        <a href="{{ route('personal', auth()->user()->username) }}" class="block underline md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit font-bold md:ml-4 lg:ml-0">{{auth()->user()->username}}</span></a>
-                                    </li>
-                                @endauth
-                                @guest
-                                    <li>
-                                        <a href="{{ route('register') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('login') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Login</a>
-                                    </li>
-                                @endguest
-                                <li class="flex items-center"> 
-                                    <a href="{{route('cart.index')}}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                        </svg>   
-                                    </a>
-                        
-                                    <span id="cartShops" class="px-1 py-0 text-white bg-sky-800 rounded-sm {{Cart::count() >= 1 ? '' : 'hidden'}}">{{Cart::count()}}</span>
-                                </li>    
-                                @auth
-                                    <li>
-                                        <form method="POST" action="{{route('logout')}}">
-                                            @csrf
-                                            <button type="submit" class="block p-1 md:text-white  md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
-                                                Sign out
-                                            </button>
-                                        </form>
-                                    </li>
-                                @endauth
-                            </ul>
+                <div class="flex gap-2">
+                    <nav class="border-gray-200 bg-gray-50 md:bg-black rounded-lg w-full">
+                        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 md:p-0">
+                            <span class="self-center text-2xl font-semibold  md:hidden">Menu</span>
+                            <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 md:hidden" aria-controls="navbar-hamburger" aria-expanded="false">
+                                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div class="w-full hidden md:flex mt-2 md:mt-0" id="navbar-hamburger">
+                                <ul class="flex flex-col md:flex-row gap-2 md:gap-5 xl:gap-8 font-medium rounded-lg bg-gray-50 md:bg-black items-center">
+                                    @auth
+                                        <li>
+                                            <a href="{{ route('personal', auth()->user()->username) }}" class="block underline md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit font-bold md:ml-4 lg:ml-0">{{auth()->user()->username}}</span></a>
+                                        </li>
+                                    @endauth
+                                    @guest
+                                        <li>
+                                            <a href="{{ route('register') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Register</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('login') }}" class="block md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">Login</a>
+                                        </li>
+                                    @endguest
+                                    <li class="hidden md:flex items-center"> 
+                                        <a href="{{route('cart.index')}}" class="md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>   
+                                        </a>
+                            
+                                        <span id="cartShops" class="px-1 text-white font-semibold bg-sky-800 rounded-sm {{Cart::count() >= 1 ? '' : 'hidden'}}">{{Cart::count()}}</span>
+                                    </li>    
+                                    @auth
+                                        <li>
+                                            <form method="POST" action="{{route('logout')}}">
+                                                @csrf
+                                                <button type="submit" class="block p-1 md:text-white  md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
+                                                    Sign out
+                                                </button>
+                                            </form>
+                                        </li>
+                                    @endauth
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
             </div>
         </header>
         
         <div class="w-full lg:w-4/5 mx-auto bg-white">
             <h1 class="text-3xl text-center font-bold">@yield('title')</h1>
-
+            <div class="flex flex-col items-end">
+                <div class="flex md:hidden items-center p-1 bg-sky-200 w-20 mt-4 mr-3 rounded-lg shadow-md fixed {{Cart::count() >= 1 ? '' : 'hidden'}} opacity-80 z-50"> 
+                    <a href="{{route('cart.index')}}" class="md:text-white p-1 md:p-0 rounded hover:bg-sky-200 md:hover:text-sky-200 md:bg-black md:hover:bg-inherit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>   
+                    </a>
+        
+                    <span class="px-1 text-white font-semibold bg-sky-800 rounded-sm">{{Cart::count()}}</span>
+                </div>    
+            </div>
             <div class="min-h-screen">@yield('content')</div>
         </div>
 

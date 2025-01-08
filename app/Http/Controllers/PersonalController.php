@@ -12,11 +12,6 @@ use Intervention\Image\Facades\Image;
 
 class PersonalController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index(User $user) 
     {
         if($user->username !== auth()->user()->username) {

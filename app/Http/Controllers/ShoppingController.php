@@ -7,11 +7,6 @@ use App\Support\Collection;
 
 class ShoppingController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $shops = Payment::with('publications')

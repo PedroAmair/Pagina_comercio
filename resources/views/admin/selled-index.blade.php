@@ -85,7 +85,7 @@
                                             @endforeach
                                         </div>
                                         <div>
-                                            <form action="{{route('selled.status', Crypt::encrypt($value))}}" method="POST">
+                                            <form action="{{route('selled.status', [auth()->user()->username, Crypt::encrypt($value)])}}" method="POST">
                                                 @csrf
                                                 <button type="submit">
                                                     @foreach ($value->payments as $checkStatus)

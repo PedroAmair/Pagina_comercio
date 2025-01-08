@@ -20,7 +20,7 @@
             </form>
         </div>
 
-        <form action="{{ route('publications.update', $bdData) }}" method="POST" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">
+        <form action="{{ route('publications.update',[auth()->user()->username, $bdData]) }}" method="POST" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">
             @csrf
             @method('PATCH')
             <fieldset class="p-5 border-4 border-gray-200 rounded-lg md:grid md:grid-cols-3 md:gap-5">

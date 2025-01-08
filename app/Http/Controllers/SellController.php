@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Crypt;
 
 class SellController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $sells = Publication::where('user_id', auth()->user()->id)
@@ -38,7 +33,7 @@ class SellController extends Controller
         ]);
     }
 
-    public function changeStatus($status)
+    public function changeStatus($ignoredUsername = null, $status)
     {
         $data = Crypt::decrypt($status);
         

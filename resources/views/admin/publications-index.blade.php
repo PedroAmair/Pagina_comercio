@@ -38,8 +38,8 @@
                             <livewire:status :publication="$publication" />
                         </div>
                         <div class="flex flex-col md:flex-row gap-2 w-2/6 xl:w-1/6 3xl:w-1/12 my-2 md:my-0 mx-0 md:mx-2">
-                            <a class="disabled py-2 px-6 font-bold bg-amber-400 text-white rounded-lg hover:bg-amber-500 text-center" href="{{route('publications.edit', Crypt::encrypt($publication->id))}}" @disabled(auth()->user()->username != $publication->user->username)>Edit</a>
-                            <form id="deleteForm{{$publication->id}}" action="{{ route('publications.destroy', $publication) }}" method="POST">
+                            <a class="disabled py-2 px-6 font-bold bg-amber-400 text-white rounded-lg hover:bg-amber-500 text-center" href="{{route('publications.edit', [auth()->user()->username, Crypt::encrypt($publication->id)])}}" @disabled(auth()->user()->username != $publication->user->username)>Edit</a>
+                            <form id="deleteForm{{$publication->id}}" action="{{route('publications.destroy', [auth()->user()->username, $publication])}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <input id="delete" type="submit" class="disabled w-full py-2 px-4 font-bold bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer" value="Delete" @disabled(auth()->user()->username != $publication->user->username)>
@@ -59,7 +59,7 @@
             </div>
             <div class="flex gap-2">
                 <p class="text-2xl">Publicate your first product</p>
-                <a href="{{route('publications.create')}}" class="text-2xl underline text-blue-600">
+                <a href="{{route('publications.create', auth()->user()->username)}}" class="text-2xl underline text-blue-600">
                     Now!
                 </a>
             </div>

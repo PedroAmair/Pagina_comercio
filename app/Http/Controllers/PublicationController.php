@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Crypt;
 
 class PublicationController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $publications = Publication::select('id','product', 'condition', 'status', 'quantity', 'category', 'price', 'user_id', 'image', 'brand')
@@ -71,7 +66,7 @@ class PublicationController extends Controller
         return redirect()->route('publications.index')->with('success', 'success');
     }
 
-    public function edit($id)
+    public function edit($ignoredUsername = null, $id)
     {
         $id = Crypt::decrypt($id);
         $bdData = Publication::find($id);
@@ -107,7 +102,7 @@ class PublicationController extends Controller
         return redirect()->route('publications.index')->with('success', 'success');
     }
 
-    public function destroy(Publication $publication)
+    public function destroy($ignoredUsername = null, Publication $publication)
     {
         $this->authorize('delete', $publication);
 

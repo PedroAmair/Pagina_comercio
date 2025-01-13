@@ -21,7 +21,7 @@
             <a 
                 class="block text-center bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                 uppercase font-bold w-full p-3 text-white rounded-lg my-5" 
-                href="{{route('shopping.index')}}"
+                href="{{route('shopping.index', auth()->user()->username)}}"
             >
                 Go to my purchased products
             </a>
@@ -35,9 +35,9 @@
         </div>
    </div>
 
-   <div class="flex flex-col md:flex-row my-5">
+   <div class="flex flex-col md:flex-row lg:justify-between my-5">
         <div>
-            <div class="flex items-center justify-center md:justify-start">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
                 <img
                     src="{{asset('img/shoppingCart.png')}}" 
                     alt="Shopping cart image"
@@ -45,18 +45,44 @@
                 >
     
                 <div>
-                    <p class="text-lg font-bold ml-[-2rem]">What you bought:</p>
+                    <p class="text-lg font-bold md:ml-[-2rem]">What you bought:</p>
                 </div>
             </div>
     
             <div class="grid grid-cols-1 items-center p-5">
                 @foreach ($purchasedProducts[0]->publications as $product)
-                <div class="flex items-center gap-2 border-2">
-                    <img class="w-24" src="{{asset('uploads').'/'.$product->image[0]}}" alt="product image">
+                <div class="flex items-center gap-2 border-2 justify-center md:justify-start">
+                    <img class="w-24 ml-1" src="{{asset('uploads').'/'.$product->image[0]}}" alt="product image">
                     <p class="text-lg">{{$product->brand === 'amd' || $product->brand === 'evga' || $product->brand === 'msi' || $product->brand === 'xfx' ? strtoupper($product->brand).' '.$product->product :  ucwords($product->brand).' '.$product->product}}</p>
                     <p class="font-bold">X {{$product->pivot->quantity}} @choice('unit|units', $product->pivot->quantity)</p>
                 </div>
                 @endforeach
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center md:gap-10 md:justify-start mt-10">
+                <img
+                    src="{{asset('img/deliveryTruck.png')}}" 
+                    alt="Shoppinn car image"
+                    class="w-16 md:mb-[-1rem] md:ml-7"
+                >
+    
+                <div>
+                    <p class="text-lg font-bold md:ml-[-2rem]">Your shipping address:</p>
+                </div>
+            </div>
+    
+            <div class="grid grid-cols-1 items-center p-5">
+                <div class="text-center md:text-left border-2 md:border-none">
+                    <p class="text-lg ml-1">
+                        {{$direction->direction_line_1. ". ". $direction->direction_line_2}}
+                    </p>
+                    <p class="text-lg ml-1">
+                        {{$direction->zip_code." "."-"." ". $direction->city.","." ". $direction->state}}
+                    </p>
+                    <p class="text-lg ml-1 uppercase font-bold">
+                        {{$direction->country}}
+                    </p>
+                </div>
             </div>
     
             <div class="m-5">
@@ -68,9 +94,9 @@
             </div>
         </div>
 
-        <div class=" flex flex-col items-center w-full md:w-1/3 mt-4">
+        <div class=" flex flex-col items-center justify-center w-full md:w-2/3 xl:w-2/4 2xl:w-1/3 mt-4">
             <h2 class="text-lg font-bold mb-2">You might be interested</h2>
-            <div class="grid grid-cols-2 gap-10 md:gap-4">
+            <div class="grid grid-cols-2 gap-10 md:gap-6">
                 @foreach ($products as $product)
                     <div class="w-36">
                         <img class="w-28" src="{{asset('uploads').'/'.$product->image[0]}}" alt="product image">

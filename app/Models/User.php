@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Payment::class);
     }
+
+    public function directions()
+    {
+        return $this->hasMany(Direction::class);
+    }
 }

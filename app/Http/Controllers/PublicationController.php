@@ -76,7 +76,7 @@ class PublicationController extends Controller
         ]);
     }
 
-    public function update(Request $request, Publication $publication)
+    public function update(Request $request, $ignoredUsername = null, Publication $publication)
     {
         $this->validate($request, [
             'product' => ['required','max:75','unique:publications,product,'.$publication->id],
@@ -99,7 +99,7 @@ class PublicationController extends Controller
         $publication->image = implode(",", $request->image);
         $publication->save();
 
-        return redirect()->route('publications.index')->with('success', 'success');
+        return redirect()->route('publications.index', auth()->user()->username)->with('success', 'success');
     }
 
     public function destroy($ignoredUsername = null, Publication $publication)

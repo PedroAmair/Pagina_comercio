@@ -28,7 +28,7 @@
             <div id="buttons" class="border-2 border-solid border-gray-200 flex flex-col 2xl:flex-row justify-center items-center py-2 2xl:py-0">
                 <button id="button" data-activeDiv="1" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2">Change profile</button>
                 <button id="button" data-activeDiv="2" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2">Payment methods</button>
-                <a href="{{route('directions.index', auth()->user()->username)}}" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2 text-center">My Adresses</a>
+                <a href="{{route('directions.index', auth()->user()->username)}}" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2 text-center">My Addresses</a>
             </div>
         </div>
 

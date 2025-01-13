@@ -15,7 +15,7 @@
         <div class="flex flex-col items-center lg:w-1/3 md:pl-5">
             <p class="font-bold">Hardware image</p>
             <p class="my-2 md:mb-3">(Max: 5 files)</p>
-            <form action="{{ route('images.store') }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-5/6 md:w-full h-96 rounded flex flex-col justify-center items-center">
+            <form action="{{ route('images.store', auth()->user()->username) }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-5/6 md:w-full h-96 rounded flex flex-col justify-center items-center">
                 @csrf
             </form>
         </div>

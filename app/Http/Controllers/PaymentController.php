@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\Direction;
 use App\Models\Publication;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\PaymentPublications;
-use Illuminate\Support\Facades\Crypt;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
@@ -87,13 +87,27 @@ class PaymentController extends Controller
 
         Cart::destroy();
 
-        return redirect()->route('payment.confirmation', Crypt::encrypt($paymentId->id));
+
+        $request->session()->put('userPayment', $paymentId->id);
+
+        return redirect()->route('payment.addressSelection');
         
     }
 
-    public function confirmation($payment)
+    public function addressConfirmation()
     {
-        $userPayment = Crypt::decrypt($payment);
+        $allDirections = Direction::where('user_id', auth()->user()->id)
+        ->orderBy('is_default', 'desc')
+        ->paginate(5);
+        
+        return view('payment.addressSelection', [
+            'allDirections' => $allDirections
+        ]);
+    }
+
+    public function confirmation(Request $request, Direction $direction)
+    {
+        $userPayment = $request->session()->get('userPayment');
 
         $purchasedProducts = Payment::with('publications')
             ->where('id', $userPayment)
@@ -111,7 +125,8 @@ class PaymentController extends Controller
 
         return view('payment.confirmation', [
             'purchasedProducts' => $purchasedProducts,
-            'products' => $products
+            'products' => $products,
+            'direction' => $direction
         ]);
     }
 

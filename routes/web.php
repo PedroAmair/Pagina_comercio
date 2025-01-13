@@ -49,6 +49,11 @@ Route::prefix('presonal/{user:username}')->middleware(['auth'])->group(function 
 
     //Directions
     Route::get('/directions', [DirectionController::class, 'index'])->name('directions.index');
+    Route::get('/directions/create', [DirectionController::class, 'create'])->name('directions.create');
+    Route::post('/directions', [DirectionController::class, 'store'])->name('directions.store');
+    Route::get('/directions/{direction}/edit', [DirectionController::class, 'edit'])->name('directions.edit');
+    Route::patch('/directions/{direction}', [DirectionController::class, 'update'])->name('directions.update');
+    Route::delete('/directions/{direction}', [DirectionController::class, 'destroy'])->name('directions.destroy');
 
     //Publications
     Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');
@@ -89,8 +94,9 @@ route::get('/payment', [PaymentController::class, 'index'])->name('payment.index
 route::post('/payment/paypal', [PaymentController::class, 'paypal'])->name('paypal');
 route::get('/payment/paypal/success', [PaymentController::class, 'success'])->name('success');
 route::get('/payment/paypal/cancel', [PaymentController::class, 'cancel'])->name('cancel');
-route::get('/payment/confirmation/{payment}', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
+route::get('/payment/confirmation/{direction}', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
 route::post('payment/{paymentType}', [PaymentController::class, 'store'])->name('payment.store');
+route::get('/payment/addressConfirmation', [PaymentController::class, 'addressConfirmation' ])->name('payment.addressSelection');
 
 //Legal section
 Route::get('/legal/privacypolicy', PrivacyController::class)->name('privacyPolicy');

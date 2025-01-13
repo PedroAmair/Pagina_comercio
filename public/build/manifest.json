@@ -3,7 +3,7 @@
     "file": "assets/sweetalert2.all-2e02e51a.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-f825e869.css",
+    "file": "assets/app-2f029bf9.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -42,7 +42,7 @@
     "src": "resources/js/confirmationDeleteAlert.js"
   },
   "resources/js/deleteDone.js": {
-    "file": "assets/deleteDone-83631f1b.js",
+    "file": "assets/deleteDone-a6e71016.js",
     "imports": [
       "_sweetalert2.all-2e02e51a.js"
     ],

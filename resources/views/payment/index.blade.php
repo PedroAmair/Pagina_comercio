@@ -32,6 +32,6 @@
         </div>
     </div>
     <div class="mx-4 my-8">
-        <a class="uppercase font-bold block text-center md:inline text-white  p-5  bg-sky-600 hover:bg-sky-700 rounded-lg" href="{{route('cart.index')}}">Back to cart</a>
+        <a class="uppercase font-bold block text-center md:inline text-white py-4 px-20 xs:px-40 md:px-8 3xl:px-10  bg-sky-600 hover:bg-sky-700 rounded-lg" href="{{route('cart.index')}}">Back to cart</a>
     </div>
 @endsection

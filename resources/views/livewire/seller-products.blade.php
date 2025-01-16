@@ -16,8 +16,8 @@
             @endforeach
         </div>
 
-        <div class="flex justify-end mx-4">
-            <a href="{{route('seller.publications', [$publication->user->username, Crypt::encrypt($publication->user_id)])}}" class="w-full md:w-1/3 xl:w-1/4 2xl:w-1/12 p-3 uppercase rounded-lg font-bold text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+        <div class="flex justify-center md:justify-end mx-4">
+            <a href="{{route('seller.publications', [$publication->user->username, Crypt::encrypt($publication->user_id)])}}" class=" w-full sm:w-2/6 lg:w-1/4 2xl:w-1/5 p-4 uppercase rounded-lg font-bold text-center text-white bg-sky-600 hover:bg-sky-700">
                 See all
             </a>
         </div>

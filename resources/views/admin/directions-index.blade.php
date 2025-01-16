@@ -8,7 +8,7 @@
 
 @section('content')
     @if(count($allDirections))
-        <div class="mt-6 mb-16 grid justify-center md:justify-end md:mr-20">
+        <div class="mt-6 mb-16 w-full grid justify-center md:justify-end md:mr-20">
             <x-new-direction-button />
         </div>
        <div class="grid w-11/12 md:w-full gap-10 md:grid-cols-2 mt-5 md:justify-items-center justify-self-center">

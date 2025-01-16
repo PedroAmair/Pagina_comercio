@@ -7,11 +7,11 @@
 @endsection
 
 @section('content')
-    <div class="flex flex-col-reverse items-center md:flex-row-reverse md:items-start gap-3 md:gap-2">
-        <div class=" flex items-center justify-center w-1/3 md:w-3/12 xl:w-2/12 mt-2">
+    <div class="flex flex-col-reverse items-center  md:flex-row-reverse md:items-start gap-6 md:gap-2">
+        <div class=" flex items-center justify-center md:w-4/12 xl:w-3/12 mt-2 md:mt-7 2xl:mt-3">
             <x-sell-button />
         </div>
-        <div class="w-8/12">
+        <div class="md:w-8/12">
             <p class="text-lg text-center">
                 Hello <span class="font-bold">{{ucfirst($user->username)}}</span>.
                 Welcome to your personal spot where you can change your 
@@ -52,7 +52,7 @@
         <div class="m-5 bg-white lg:flex items-start">
             <div class="flex flex-col items-center mt-2">
                 <p class="font-bold mb-1">Avatar</p>
-                <img class="w-2/4 md:w-1/4 xl:w-2/4 rounded-full" src="{{asset('uploads/profilePhotos').'/'.$user->image}}" alt="user image">
+                <img class="w-2/4 md:max-w-xs xl:max-w-sm rounded-full" src="{{asset('uploads/profilePhotos').'/'.$user->image}}" alt="user image">
             </div>
     
             <form action="{{ route('personal.update', auth()->user()->username) }}" method="POST" enctype="multipart/form-data" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">
@@ -145,7 +145,7 @@
                         type="submit"
                         value="Proceed"
                         class="inhabilitate bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                        uppercase font-bold w-1/3 p-3 text-white rounded-lg mt-4 col-start-1 col-end-1"
+                        uppercase font-bold w-full sm:w-2/4 3xl:w-2/6 p-4  text-white rounded-lg mt-4 col-start-1 col-end-1"
                         @disabled(auth()->user()->username != $user->username)
                     />
                 </fieldset>  

@@ -44,7 +44,7 @@
                         <form action="{{route('cart.destroy', Crypt::encrypt($publication->rowId))}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input id="delete" type="submit" class="py-3 md:py-2 px-10 md:px-4 font-bold bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer" value="X">
+                            <input id="delete" type="submit" class="py-3 md:py-2 px-10 md:px-4 font-bold bg-red-600 text-white rounded-full hover:bg-red-700 cursor-pointer" value="X">
                         </form>
                     </div>
                 </div>
@@ -79,11 +79,11 @@
 
             <div class="my-20 flex flex-col-reverse md:flex-row md:justify-between gap-6">
                 <div>
-                    <a class="block text-center md:inline p-3 uppercase font-bold bg-red-600 text-white rounded-lg hover:bg-red-700" href="{{route('cart.clear')}}">Clear cart</a>
+                    <a class="block text-center md:inline py-4 px-16 uppercase font-bold bg-red-600 text-white rounded-lg hover:bg-red-700" href="{{route('cart.clear')}}">Clear</a>
                 </div>
     
                 <div>
-                    <a class="block text-center md:inline py-3 px-6 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="{{route('cart.quantity.verify')}}">Proceed</a>
+                    <a class="block text-center md:inline py-4 px-16 uppercase font-bold bg-green-600 text-white rounded-lg hover:bg-green-700" href="{{route('cart.quantity.verify')}}">Next</a>
                 </div>
             </div>
         </div>       

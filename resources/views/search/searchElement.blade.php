@@ -88,7 +88,7 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-1 gap-4 mx-4">
-                    <button type="submit" form="quantityForm" class="flex items-center gap-2 justify-center bg-sky-800 hover:bg-sky-900 transition-colors cursor-pointer
+                    <button type="submit" form="quantityForm" class="flex items-center gap-2 justify-center bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                                 uppercase font-bold w-full p-3 text-white rounded-lg my-5">
                         add to cart 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">

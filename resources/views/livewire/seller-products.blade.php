@@ -17,7 +17,7 @@
         </div>
 
         <div class="flex justify-center md:justify-end mx-4">
-            <a href="{{route('seller.publications', [$publication->user->username, Crypt::encrypt($publication->user_id)])}}" class=" w-full sm:w-2/6 lg:w-1/4 2xl:w-1/5 p-4 uppercase rounded-lg font-bold text-center text-white bg-sky-600 hover:bg-sky-700">
+            <a href="{{route('seller.publications', [$publication->user->username, Crypt::encrypt($publication->user_id)])}}" class=" w-full sm:w-1/6 2xl:w-1/12 p-4 uppercase rounded-lg font-bold text-center text-white bg-sky-600 hover:bg-sky-700">
                 See all
             </a>
         </div>

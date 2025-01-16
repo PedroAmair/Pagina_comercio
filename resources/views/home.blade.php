@@ -186,7 +186,9 @@
             </div>
         
             <div class="flex justify-center mt-4 md:mt-10 md:ml-48">
-                <a href="{{ route('register') }}" class="text-white w-2/3 md:w-auto bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-md px-10 py-5 text-center mr-2 mb-2">Register now</a>
+                <a href="{{ route('register') }}" class="text-white w-2/3 md:w-auto bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-md px-10 py-5 text-center mr-2 mb-2">
+                    Register now
+                </a>
             </div>      
         </div>
         <img loading="lazy" class="h-96 hidden md:block" src="{{ asset('img/offerSection/pointingMen.png') }}" alt="pointing men image">

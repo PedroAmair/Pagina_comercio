@@ -5,7 +5,9 @@ if(localStorage.getItem(key) === null) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    effect(); 
+    Livewire.on('updated', () => {
+        effect();
+    }) 
 });
 
 function effect() {

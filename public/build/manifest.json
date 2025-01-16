@@ -3,12 +3,12 @@
     "file": "assets/sweetalert2.all-2e02e51a.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-6387f708.css",
+    "file": "assets/app-27b11a5b.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/addedToCartAlert.js": {
-    "file": "assets/addedToCartAlert-9b50ad77.js",
+    "file": "assets/addedToCartAlert-1c921d24.js",
     "isEntry": true,
     "src": "resources/js/addedToCartAlert.js"
   },
@@ -21,7 +21,7 @@
     "src": "resources/js/app.js"
   },
   "resources/js/cartEffect.js": {
-    "file": "assets/cartEffect-e21b0bc7.js",
+    "file": "assets/cartEffect-4d323d4c.js",
     "isEntry": true,
     "src": "resources/js/cartEffect.js"
   },

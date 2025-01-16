@@ -1,6 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    initiate(); 
-});
+window.onload = function() {
+    Livewire.on('addedProduct', () => {
+        initiate();
+    })
+}
+
 
 function initiate() {
     addedToCartAlert();
@@ -11,6 +14,6 @@ function addedToCartAlert() {
     if(divCartAlert) {
         setTimeout(() => {
             divCartAlert.classList.add("hidden");
-        }, 5000)
+        }, 4000)
     }
 }

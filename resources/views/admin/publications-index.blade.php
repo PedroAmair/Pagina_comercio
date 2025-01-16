@@ -2,7 +2,7 @@
 
 @section('title')
 <div class="my-5">
-   Publications
+   My publications
 </div>
 @endsection
 

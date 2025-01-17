@@ -148,7 +148,7 @@
         <div class="md:my-6">
             <form action="{{route('paypal')}}" method="POST">
                 @csrf
-                <button class="w-full p-5 bg-sky-800 hover:bg-sky-900 rounded-lg uppercase text-white font-bold">Pay with Paypal</button>
+                <button class="w-full p-5 bg-sky-600 hover:bg-sky-700 rounded-lg uppercase text-white font-bold">Pay with Paypal</button>
             </form>
         </div>
     @endif

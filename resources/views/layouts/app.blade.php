@@ -82,7 +82,9 @@
         <div class="w-full lg:w-4/5 mx-auto bg-white">
             <h1 class="text-3xl text-center font-bold">@yield('title')</h1>
             <div class="flex flex-col items-end">
-                <livewire:cart-counter-small />     
+                @if(request()->routeIs('home') || request()->routeIs('searchs.index') || request()->routeIs('searchs.show'))
+                    <livewire:cart-counter-small />
+                @endif   
             </div>
             <div class="min-h-screen">@yield('content')</div>
         </div>

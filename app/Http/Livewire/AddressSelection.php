@@ -10,7 +10,7 @@ class AddressSelection extends Component
 
     public function getAddress()
     {
-       return redirect()->route('payment.confirmation', $this->direction);
+       return redirect()->route('payment.index', $this->direction);
     }
 
     public function render()

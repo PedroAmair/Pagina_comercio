@@ -54,7 +54,7 @@ class CartController extends Controller
         }
 
         if(empty($elements)) {
-            return redirect()->route('payment.index');
+            return redirect()->route('payment.addressSelection');
         }else{
             return back()->with('elements', $elements);
         }

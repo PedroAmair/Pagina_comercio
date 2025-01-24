@@ -74,13 +74,13 @@
             <div class="grid grid-cols-1 items-center p-5">
                 <div class="text-center md:text-left border-2 md:border-none">
                     <p class="text-lg ml-1">
-                        {{$direction->direction_line_1. ". ". $direction->direction_line_2}}
+                        {{$userDirection->direction_line_1. ". ". $userDirection->direction_line_2}}
                     </p>
                     <p class="text-lg ml-1">
-                        {{$direction->zip_code." "."-"." ". $direction->city.","." ". $direction->state}}
+                        {{$userDirection->zip_code." "."-"." ". $userDirection->city.","." ". $userDirection->state}}
                     </p>
                     <p class="text-lg ml-1 uppercase font-bold">
-                        {{$direction->country}}
+                        {{$userDirection->country}}
                     </p>
                 </div>
             </div>

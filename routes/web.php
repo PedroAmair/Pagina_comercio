@@ -89,13 +89,14 @@ route::delete('/cart/deleteItem/{rowId}', [CartController::class, 'destroy'])->n
 route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 //Payment section
-route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
 route::post('/payment/paypal', [PaymentController::class, 'paypal'])->name('paypal');
 route::get('/payment/paypal/success', [PaymentController::class, 'success'])->name('success');
 route::get('/payment/paypal/cancel', [PaymentController::class, 'cancel'])->name('cancel');
-route::get('/payment/confirmation/{direction}', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
-route::post('payment/{paymentType}', [PaymentController::class, 'store'])->name('payment.store');
 route::get('/payment/addressConfirmation', [PaymentController::class, 'addressConfirmation' ])->name('payment.addressSelection');
+route::get('/payment/confirmation', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
+route::get('/payment/{direction}', [PaymentController::class, 'index'])->name('payment.index');
+route::post('payment/{paymentType}', [PaymentController::class, 'store'])->name('payment.store');
+
 
 //Legal section
 Route::get('/legal/privacypolicy', PrivacyController::class)->name('privacyPolicy');

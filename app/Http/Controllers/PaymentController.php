@@ -20,8 +20,10 @@ class PaymentController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function index(Request $request, Direction $direction)
     {
+        $request->session()->put('userDirection', $direction);
+
         return view('payment.index');
     }
 
@@ -87,10 +89,9 @@ class PaymentController extends Controller
 
         Cart::destroy();
 
-
         $request->session()->put('userPayment', $paymentId->id);
 
-        return redirect()->route('payment.addressSelection');
+        return redirect()->route('payment.confirmation');
         
     }
 
@@ -105,9 +106,10 @@ class PaymentController extends Controller
         ]);
     }
 
-    public function confirmation(Request $request, Direction $direction)
+    public function confirmation(Request $request)
     {
         $userPayment = $request->session()->get('userPayment');
+        $userDirection = $request->session()->get('userDirection');
 
         $purchasedProducts = Payment::with('publications')
             ->where('id', $userPayment)
@@ -126,7 +128,7 @@ class PaymentController extends Controller
         return view('payment.confirmation', [
             'purchasedProducts' => $purchasedProducts,
             'products' => $products,
-            'direction' => $direction
+            'userDirection' => $userDirection
         ]);
     }
 

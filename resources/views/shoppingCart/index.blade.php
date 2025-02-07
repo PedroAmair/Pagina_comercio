@@ -30,7 +30,7 @@
                             @if(session('elements'))
                                 @foreach(session('elements') as $item)
                                     @if($publication->rowId === $item['id'])
-                                        <div class=""><p class="bg-red-400 rounded-lg p-2 text-red-800 text-sm font-bold text-center">Only {{$item['quantity']}} left</p></div>
+                                        <div><p class="bg-red-400 rounded-lg p-2 text-red-800 text-sm font-bold text-center">Only {{$item['quantity']}} left</p></div>
                                     @endif
                                 @endforeach
                             @endif
@@ -44,7 +44,7 @@
                         <form action="{{route('cart.destroy', Crypt::encrypt($publication->rowId))}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input id="delete" type="submit" class="py-3 md:py-2 px-10 md:px-4 font-bold bg-red-600 text-white rounded-full hover:bg-red-700 cursor-pointer" value="X">
+                            <input id="delete" type="submit" class="py-3 md:py-1 px-10 md:px-3 font-bold bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer" value="X">
                         </form>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Payment;
 use App\Models\Direction;
+use App\Models\Reputation;
 use App\Models\Publication;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -86,6 +87,21 @@ class PaymentController extends Controller
         }
 
         PaymentPublications::insert($payment_publications);
+
+        foreach(Cart::content() as $info) {
+            $product_id = Publication::find($info->id); 
+            $seller_id = $product_id->user_id;
+
+            $reputation[] = [
+                'user_id' => auth()->user()->id,
+                'seller_id' => $seller_id,
+                'payment_id' => $paymentId->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ];
+        }
+
+        Reputation::insert($reputation);
 
         Cart::destroy();
 

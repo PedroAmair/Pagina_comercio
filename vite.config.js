@@ -15,6 +15,8 @@ export default defineConfig({
                     'resources/js/deleteDone.js',
                     'resources/js/addedToCartAlert.js',
                     'resources/js/cartEffect.js',
+                    'resources/js/keepModalOpen.js',
+                    'resources/js/calculateReputation.js',
                     'resources/js/outOfStockAlert.js'],
             refresh: true,
         }),

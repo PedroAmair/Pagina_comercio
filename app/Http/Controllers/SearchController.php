@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reputation;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 
@@ -46,8 +47,24 @@ class SearchController extends Controller
         $publication->description = explode(PHP_EOL, $publication->description);
         $publication->image = explode(",", $publication->image);
 
+        $avgReputation = Reputation::where('seller_id', $publication->user_id)
+            ->where('rated', 1)
+            ->avg('calification');
+
+        $individualRating = Reputation::select('calification')
+            ->where('seller_id', $publication->user_id)
+            ->where('rated', 1)
+            ->get();
+
+        $comments = Reputation::where('seller_id', $publication->user_id)
+            ->where('rated', 1)
+            ->paginate(5);
+
         return view('search.searchElement',[
-            'publication' => $publication
+            'publication' => $publication,
+            'avgReputation' => $avgReputation,
+            'individualRating' => $individualRating,
+            'comments' => $comments
         ]);
     }
 }

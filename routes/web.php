@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SellerPublications;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\DirectionController;
+use App\Http\Controllers\ReputationController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\DataDeletionController;
 
@@ -73,6 +74,8 @@ Route::prefix('presonal/{user:username}')->middleware(['auth'])->group(function 
     Route::get('/selled', [SellController::class, 'index'])->name('selled.index');
     Route::post('seled/status/{status}', [SellController::class, 'changeStatus'])->name('selled.status');
 
+    //Reputation
+    Route::get('/reputation', [ReputationController::class, 'index'])->name('reputation.index');
 });
 
 //Seller publications customer view

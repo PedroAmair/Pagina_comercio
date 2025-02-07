@@ -16,8 +16,13 @@
                 </div>
             </div>
         </div>
-        <div class="w-full md:w-2/3 2xl:w-1/3 bg-gray-100 rounded-lg">
-            <div>
+        <div class="w-full md:w-2/3 2xl:w-1/3 bg-gray-100 rounded-lg relative">
+            <div class="absolute top-1">
+                <span class="text-white font-bold rounded-sm p-1 {{$publication->condition == 1 ? "bg-green-500" : ($publication->condition == 2 ? "bg-blue-500" : "bg-amber-500")}}">
+                    {{$publication->condition == 1 ? "New" : ($publication->condition == 2 ? "Used" : "Refurbished")}}
+                </span>
+            </div>
+            <div class="mt-7">
                 <h2 class="text-center text-3xl mt-2">{{$publication->brand === 'amd' || $publication->brand === 'evga' || $publication->brand === 'msi' || $publication->brand === 'xfx' ? strtoupper($publication->brand).' '.$publication->product :  ucwords($publication->brand).' '.$publication->product}}</h2>
             </div>
 
@@ -42,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="my-5 flex justify-center gap-2 p-2">
+                <div class="flex justify-center gap-2 p-2">
                     <div class="text-xl">
                         How many units do you want? :
                     </div>
@@ -50,15 +55,7 @@
                        <livewire:add-cart-button :publication="$publication" />
                     </div>
                 </div>
-                <div class="mx-5 flex flex-col sm:flex-row items-center gap-1">
-                    <p class="font-bold">Seller: <a class="text-blue-700" href="">{{ucfirst($publication->user->username)}}</p>
-                    <img class="rounded-full h-10 w-10" src="{{asset('uploads/profilePhotos').'/'.$publication->user->image}}" alt="user image"></a>
-                    <p class="font-bold ml-3">Condition: 
-                        <span class="{{$publication->condition == 1 ? "text-green-500" : ($publication->condition == 2 ? "text-blue-500" : "text-amber-500")}}">
-                            {{$publication->condition == 1 ? "New" : ($publication->condition == 2 ? "Used" : "Refurbished")}}
-                        </span>
-                    </p>
-                </div>
+                
                 <div class="grid grid-cols-1 gap-4 mx-4">
                     <button type="submit" form="quantityForm" class="flex items-center gap-2 justify-center bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                                 uppercase font-bold w-full p-3 text-white rounded-lg my-5">
@@ -100,7 +97,13 @@
         </div>     
     </div>
 
-    <livewire:seller-products :publication="$publication">
+    <x-reputation :publication="$publication" :avgReputation="$avgReputation" />
+
+    <div id="individualReputation" data-rate="{{json_encode($individualRating)}}"></div>
+
+    <x-comments :publication="$publication" :comments="$comments" />
+
+    <livewire:seller-products :publication="$publication" />
 
     <div class="md:flex md:gap-6 mb-10 md:mx-4 md:justify-around">
         <div class="md:w-1/2 p-5 bg-gray-100 rounded-lg flex flex-col items-center md:shadow-lg mb-20 md:mb-0">
@@ -157,4 +160,5 @@
 @section('scripts')
     @vite('resources/js/imagesSelector.js')
     @vite('resources/js/addedToCartAlert.js')
+    @vite('resources/js/calculateReputation.js')
 @endsection

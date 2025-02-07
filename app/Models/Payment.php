@@ -22,7 +22,7 @@ class Payment extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class)->select('fname', 'lname', 'username');
+        return $this->belongsTo(User::class);
     }
 
     public function seller()
@@ -33,5 +33,10 @@ class Payment extends Model
     public function publications()
     {
         return $this->belongsToMany(Publication::class, 'payment_publications')->withPivot('quantity', 'order_code', 'status', 'created_at');
+    }
+
+    public function reputation()
+    {
+        return $this->hasMany(Reputation::class);
     }
 }

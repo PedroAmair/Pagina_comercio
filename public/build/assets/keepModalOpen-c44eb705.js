@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){d()});function d(){const e=document.querySelector("#select-modal"),o=document.querySelector(".accordion").dataset.number,t=document.querySelector(`#accordion-color-body-${o}`),r=document.querySelector("#errorRate");e&&e.dataset.hasErrors==="true"&&(t.classList.remove("hidden"),r.classList.remove("hidden"))}

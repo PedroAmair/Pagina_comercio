@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publication;
-use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\User;
 
 class HomeController extends Controller
 {

@@ -5,11 +5,11 @@
             @foreach ($sellerPublications as $publication)
                 <div class="border">
                     <a href="{{route('searchs.show', $publication)}}">
-                        <img class="h-1/2 mx-auto max-h-52" src="{{asset('uploads').'/'.$publication->image[0]}}" alt="{{$publication->product}}">
+                        <img class="h-44 mx-auto" src="{{asset('uploads').'/'.$publication->image[0]}}" alt="{{$publication->product}}">
                     </a>
 
                     <div>
-                        <p class="text-center font-bold 2xl:text-lg">{{$publication->brand === 'amd' || $publication->brand === 'evga' || $publication->brand === 'msi' || $publication->brand === 'xfx' ? strtoupper($publication->brand).' '.$publication->product :  ucwords($publication->brand).' '.$publication->product}}</p>
+                        <p class="truncate text-center font-bold 2xl:text-lg">{{$publication->brand === 'amd' || $publication->brand === 'evga' || $publication->brand === 'msi' || $publication->brand === 'xfx' ? strtoupper($publication->brand).' '.$publication->product :  ucwords($publication->brand).' '.$publication->product}}</p>
                         <p class="text-center text-green-700 font-bold text-2xl">{{$publication->price}} $</p>
                     </div>
                 </div>

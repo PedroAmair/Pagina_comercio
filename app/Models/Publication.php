@@ -25,7 +25,7 @@ class Publication extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class)->select('username', 'image');
+        return $this->belongsTo(User::class);
     }
 
     public function payments()

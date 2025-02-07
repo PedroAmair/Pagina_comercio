@@ -16,6 +16,12 @@ class AddCartButton extends Component
 
     public function addToCart()
     {
+        if($this->publication->user->id === auth()->user()->id) {
+            $this->emit('error');
+            session()->flash('error', 'You cannot buy your own product');
+            return redirect()->back();
+        }
+
         $this->validate();
 
         $this->publication->image = explode(",", $this->publication->image);

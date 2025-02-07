@@ -59,4 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Direction::class);
     }
+
+    public function reputation()
+    {
+        return $this->hasOne(Reputation::class);
+    }
 }

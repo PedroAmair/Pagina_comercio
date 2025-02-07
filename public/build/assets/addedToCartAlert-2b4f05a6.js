@@ -1,0 +1,1 @@
+window.onload=function(){Livewire.on("addedProduct",()=>{t()}),Livewire.on("error",()=>{t()})};function t(){d()}function d(){const e=document.querySelector("#alert-border-3");e&&setTimeout(()=>{e.classList.add("hidden")},4e3)}

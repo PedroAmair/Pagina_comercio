@@ -2,6 +2,10 @@ window.onload = function() {
     Livewire.on('addedProduct', () => {
         initiate();
     })
+
+    Livewire.on('error', () => {
+        initiate();
+    })
 }
 
 

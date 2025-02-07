@@ -2,7 +2,7 @@
 
 @section('title')
     <div class="my-5 flex items-center justify-center gap-1">
-        My space <img class="w-8 h-8 rounded-full" src="{{asset('uploads/profilePhotos').'/'.$user->image}}" alt="user image" alt="user image">
+        My space <img class="w-8 h-8 rounded-full" src="{{asset('uploads/profilePhotos').'/'.$user->image}}" alt="user image">
     </div>
 @endsection
 
@@ -27,7 +27,7 @@
             <h2 class="text-2xl font-bold text-center lg:text-left">My info</h2>
             <div id="buttons" class="border-2 border-solid border-gray-200 flex flex-col 2xl:flex-row justify-center items-center py-2 2xl:py-0">
                 <button id="button" data-activeDiv="1" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2">Change profile</button>
-                <button id="button" data-activeDiv="2" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2">Payment methods</button>
+                <a href="{{route('reputation.index', auth()->user()->username)}}" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2 text-center">My reputation</a>
                 <a href="{{route('directions.index', auth()->user()->username)}}" class="p-5 font-bold bg-gray-200 hover:bg-gray-300 rounded-full w-2/3 lg:w-2/4 2xl:w-full my-2 2xl:my-5 2xl:mx-2 text-center">My Addresses</a>
             </div>
         </div>
@@ -58,7 +58,7 @@
             <form action="{{ route('personal.update', auth()->user()->username) }}" method="POST" enctype="multipart/form-data" class="mt-2 lg:w-2/3 lg:pr-5 lg:pb-4">
                 @csrf
                 @method('PATCH')
-                <fieldset class="p-5 border-4 border-gray-200 rounded-lg grid md:grid-cols-2 gap-2">
+                <fieldset class="p-5 border-2 border-gray-200 rounded-lg grid md:grid-cols-2 gap-2">
                     <legend class="font-bold">Personal information</legend>
                     <div class="mb-3">
                         <label for="username" id="username" class="mb-2 block uppercase text-gray-500 font-bold">

@@ -5,23 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Direction extends Model
+class Reputation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'direction_line_1',
-        'direction_line_2',
-        'country',
-        'state',
-        'city',
-        'zip_code',
+        'calification',
+        'comments',
+        'rated',
+        'payment_id',
         'user_id',
-        'is_default'
+        'seller_id'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+    public function payments()
+    {
+        return $this->belongsTo(Payment::class);
+    }
+    
 }

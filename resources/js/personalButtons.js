@@ -9,7 +9,6 @@ function initiate() {
     buttons();
     showChangePasswordSection();
     inhabilitateExecution();
-    disableOptions();
 }
 
 function showSection() {

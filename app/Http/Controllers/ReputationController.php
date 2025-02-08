@@ -8,10 +8,14 @@ class ReputationController extends Controller
 {
     public function index()
     {
-        $reputation = Reputation::where('seller_id', auth()->user()->id)
+        $reputation = Reputation::with(['payments.publications' => function ($query) {
+                $query->where('user_id', auth()->user()->id)
+                    ->latest();
+            }])
+            ->where('seller_id', auth()->user()->id)
             ->where('rated', 1)
             ->latest()
-            ->get();
+            ->paginate(5);
 
         return view('admin.reputation-index', [
             'reputation' => $reputation,

@@ -7,8 +7,20 @@
 @endsection
 
 @section('content')
+    @php
+        $contExt = 0;
+        $contInt = 0;
+        $paymentNumber = '';
+    @endphp
+
     @if(count($reputation))
         @foreach ($reputation as $rate)
+            @if($paymentNumber != $rate->payment_id)
+                @php
+                    $paymentNumber = $rate->payment_id;
+                    $contExt = 0;
+                @endphp
+            @endif
             <div class="w-11/12 border-2 border-solid border-gray-200 my-5 mx-auto p-2 shadow-md">
                 <div class="flex justify-between items-center rounded-lg bg-gray-300 p-2">
                     <div class="flex items-center gap-1">
@@ -112,8 +124,28 @@
                     @endif
                 </div>
                 <p class="italic">"{{$rate->comments}}"</p>
-            </div>    
+                @foreach ($rate->payments->publications as $keyInt=>$products)
+                    @if($contExt == $contInt)
+                        <div>Purchased item: <span class="font-bold">{{$products->brand === 'amd' || $products->brand === 'evga' || $products->brand === 'msi' || $products->brand === 'xfx' ? strtoupper($products->brand).' '.$products->product :  ucwords($products->brand).' '.$products->product}}</span></div>
+                    @endif
+                    @php
+                        $contInt += 1;
+                    @endphp
+                    @if($keyInt == $rate->payments->publications->count()-1)
+                        @php
+                            $contInt = 0;
+                        @endphp
+                    @endif
+                @endforeach
+            </div>
+            @php
+                $contExt += 1;
+            @endphp
         @endforeach
+
+        <div class="my-5">
+            {{$reputation->links()}}
+        </div>
     @else
         <div class="flex flex-col items-center">
             <div>

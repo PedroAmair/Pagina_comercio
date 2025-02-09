@@ -56,9 +56,18 @@ class SearchController extends Controller
             ->where('rated', 1)
             ->get();
 
-        $comments = Reputation::where('seller_id', $publication->user_id)
+        /*$comments = Reputation::where('seller_id', $publication->user_id)
             ->where('rated', 1)
-            ->paginate(5);
+            ->paginate(5);*/
+
+            $comments = Reputation::with(['payments.publications' => function ($query) use ($publication) {
+                $query->where('user_id', $publication->user_id)
+                    ->latest();
+                }])
+                ->where('seller_id', $publication->user_id)
+                ->where('rated', 1)
+                ->latest()
+                ->paginate(5);
 
         return view('search.searchElement',[
             'publication' => $publication,

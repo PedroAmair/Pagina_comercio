@@ -10,7 +10,8 @@ class SearchController extends Controller
 {
     public function index($searchType, $data, Request $request)
     {
-        $search = $request->search;
+        $query = $request->search;
+        $search = explode(' ', $query);
 
         if($searchType == 'brand') {
             $results = Publication::select('id','product', 'image', 'price', 'brand')
@@ -26,11 +27,19 @@ class SearchController extends Controller
                 ->paginate(30);
 
         }else if($searchType == 'general') {
-            $results = Publication::select('id','product', 'image', 'price', 'brand')
-                ->where([['brand', $search], ['status', 1]])
-                ->orWhere([['product','LIKE', '%'.$search.'%'], ['status', 1]])
+            if($search) {
+                $results = Publication::where(function ($q) use ($search) {
+                    foreach ($search as $keyword) {
+                        $q->orWhere('product', 'LIKE', '%' . $keyword . '%')
+                          ->orWhere('brand', 'LIKE', '%' . $keyword . '%');
+                    }
+                })
                 ->latest()
                 ->paginate(30);
+            }else{
+                $results = Publication::paginate(30);
+            }
+            
         }
 
         foreach($results as $result) {
@@ -56,18 +65,14 @@ class SearchController extends Controller
             ->where('rated', 1)
             ->get();
 
-        /*$comments = Reputation::where('seller_id', $publication->user_id)
+        $comments = Reputation::with(['payments.publications' => function ($query) use ($publication) {
+            $query->where('user_id', $publication->user_id)
+                ->latest();
+            }])
+            ->where('seller_id', $publication->user_id)
             ->where('rated', 1)
-            ->paginate(5);*/
-
-            $comments = Reputation::with(['payments.publications' => function ($query) use ($publication) {
-                $query->where('user_id', $publication->user_id)
-                    ->latest();
-                }])
-                ->where('seller_id', $publication->user_id)
-                ->where('rated', 1)
-                ->latest()
-                ->paginate(5);
+            ->latest()
+            ->paginate(5);
 
         return view('search.searchElement',[
             'publication' => $publication,

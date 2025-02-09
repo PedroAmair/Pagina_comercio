@@ -10,7 +10,7 @@ class SearchController extends Controller
 {
     public function index($searchType, $data, Request $request)
     {
-        $query = $request->search;
+        $query = strip_tags($request->search); //Sanitizando la entrada
         $search = explode(' ', $query);
 
         if($searchType == 'brand') {
@@ -31,7 +31,8 @@ class SearchController extends Controller
                 $results = Publication::where(function ($q) use ($search) {
                     foreach ($search as $keyword) {
                         $q->orWhere('product', 'LIKE', '%' . $keyword . '%')
-                          ->orWhere('brand', 'LIKE', '%' . $keyword . '%');
+                          ->orWhere('brand', 'LIKE', '%' . $keyword . '%')
+                          ->orWhere('category', 'LIKE', '%' . $keyword . '%');
                     }
                 })
                 ->latest()

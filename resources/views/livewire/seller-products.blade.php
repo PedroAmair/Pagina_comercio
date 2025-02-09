@@ -1,4 +1,4 @@
-<div class="my-20">
+<div class="mt-10 mb-16">
     @if($sellerPublications->count())
         <h2 class="text-2xl text-center md:text-left font-bold mx-4">Other products from this seller</h2>
         <div class="grid md:grid-cols-2 xl:grid-cols-4 m-4 items-center">

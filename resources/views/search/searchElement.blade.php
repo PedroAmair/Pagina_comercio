@@ -101,8 +101,9 @@
 
     <div id="individualReputation" data-rate="{{json_encode($individualRating)}}"></div>
 
-    <x-comments :publication="$publication" :comments="$comments" />
-
+    @if($comments)
+        <x-comments :comments="$comments" />
+    @endif
     <livewire:seller-products :publication="$publication" />
 
     <div class="md:flex md:gap-6 mb-10 md:mx-4 md:justify-around">

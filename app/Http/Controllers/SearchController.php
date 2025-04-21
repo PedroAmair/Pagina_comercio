@@ -35,6 +35,7 @@ class SearchController extends Controller
                           ->orWhere('category', 'LIKE', '%' . $keyword . '%');
                     }
                 })
+                ->where('status', 1)
                 ->latest()
                 ->paginate(30);
             }else{
